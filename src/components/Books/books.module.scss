@@ -1,0 +1,26 @@
+$mainColor: #15b6b8;
+
+.book {
+  height: 450px;
+  width: 350px;
+  padding: 1rem;
+  background-color: whitesmoke;
+  border: solid 4px $mainColor;
+  border-radius: 3%;
+  text-align: center;
+  box-shadow: -6px 10px 6px -6px black;
+  img {
+    height: 350px;
+    width: 350px;
+
+    border: solid 4px white;
+  }
+}
+
+.bookBody {
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+}

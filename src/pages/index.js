@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 
 import SEO from "../components/seo"
 import homeStyles from "./home.module.scss"
+import BookView from "../components/BookView"
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -21,17 +22,32 @@ const IndexPage = () => {
           }
         }
       }
+      allContentfulBook {
+        edges {
+          node {
+            bookTitle
+            bookImage {
+              file {
+                url
+              }
+            }
+          }
+        }
+      }
     }
   `)
 
   return (
-    <Layout>
+    <Layout header="Home">
       <SEO title="Home" />
-      <h1>Hi people</h1>
-      <p>Welcome to your new Gatsby site.</p>
-      <p>Now go build something great.</p>
+      <div className={homeStyles.header}>
+        <div>
+          <h1>Find the perfect book for your child</h1>
+          <p>Search through my recommended books</p>
+        </div>
+      </div>
+      <BookView books={data.allContentfulBook.edges} />
       <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}></div>
-      <Link to="/page-2/">Go to page 2</Link>
     </Layout>
   )
 }
