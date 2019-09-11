@@ -1,5 +1,102 @@
+$secondaryColor: #329d9f;
+$primaryColor: #15b6b8;
+
 .visibleBooks {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  background-color: $secondaryColor;
+  padding: 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+
+  h4 {
+    color: black;
+  }
+}
+
+.select {
+  width: 350px;
+  text-align: center;
+
+  select {
+    background-color: $primaryColor;
+    position: relative;
+    width: 200px;
+    height: 35px;
+    color: white;
+  }
+
+  .option {
+    position: absolute;
+    background-color: DodgerBlue;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+  }
+
+  select:focus {
+    outline: none;
+  }
+
+  select:hover {
+    cursor: pointer;
+    box-shadow: 0 10px 6px -6px black;
+    transform: scale(1.05);
+  }
+}
+
+.results {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.searchBar {
+  height: 35px;
+  width: 200px;
+  border-radius: 6%;
+}
+
+.searchBar:focus {
+  outline: none;
+  border: solid 4px $primaryColor;
+
+  box-shadow: 0 10px 6px -6px black;
+  transform: scale(1.05);
+  text-decoration-color: #15b6b8;
+}
+
+.searchBar:hover {
+  cursor: pointer;
+
+  box-shadow: 0 10px 6px -6px black;
+  transform: scale(1.05);
+}
+
+.searchBtn {
+  height: 41px;
+  width: 41px;
+  background-color: $secondaryColor;
+  margin-left: 1rem;
+  border-radius: 50%;
+  color: white;
+}
+.searchBtn:focus {
+  outline: none;
+}
+
+.searchBtn:hover {
+  box-shadow: 0 8px 6px -6px black;
+  cursor: pointer;
+  transform: scale(1.1);
+  border: solid 2px $primaryColor;
+}
+
+.searchContainer {
+  width: 350px;
+  text-align: center;
 }
