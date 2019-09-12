@@ -31,6 +31,8 @@ const IndexPage = () => {
                 url
               }
             }
+            author
+            category
           }
         }
       }

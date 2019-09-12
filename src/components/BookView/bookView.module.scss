@@ -9,6 +9,12 @@ $primaryColor: #15b6b8;
   padding: 1rem;
 }
 
+.noBooks {
+  height: 500px;
+  background-color: $secondaryColor;
+  padding: 1rem;
+}
+
 .header {
   display: flex;
   justify-content: space-around;
@@ -99,4 +105,7 @@ $primaryColor: #15b6b8;
 .searchContainer {
   width: 350px;
   text-align: center;
+}
+
+.select-css {
 }
