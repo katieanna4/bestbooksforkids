@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./Header"
 import FeaturedBook from "./FeaturedBook"
 import Footer from "./Footer"
+import Contact from "./Contact"
 
 import layoutStyle from "./layout.module.scss"
 
@@ -25,6 +26,7 @@ const Layout = props => {
           <Header header={props.header} />
           <FeaturedBook />
           <main>{props.children}</main>
+          <Contact />
           <Footer />
         </div>
       </div>

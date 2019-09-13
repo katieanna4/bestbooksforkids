@@ -1,4 +1,5 @@
 $mainColor: #15b6b8;
+$secondaryColor: #329d9f;
 
 .jumbotron {
   width: 100%;
@@ -25,7 +26,7 @@ $mainColor: #15b6b8;
 
 .navBar {
   height: 75px;
-  background-color: $mainColor;
+  background-color: $secondaryColor;
 
   ul {
     margin-right: 3rem;

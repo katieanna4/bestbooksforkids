@@ -145,7 +145,7 @@ class BookView extends Component {
           </div>
 
           <div className={bookViewStyles.searchContainer}>
-            <h3>Search by title or author</h3>
+            <h3>Search by Title, Author or Genre</h3>
             <input
               className={bookViewStyles.searchBar}
               type="text"
