@@ -33,6 +33,7 @@ const IndexPage = () => {
             }
             author
             category
+            tags
           }
         }
       }

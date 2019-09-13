@@ -46,7 +46,7 @@ class BookView extends Component {
 
     let data = this.state.searchParameter
 
-    if (data.trim() === "") {
+    if (!data || data.trim() === "") {
       return false
     } else {
       document.getElementById("search-bar").value = ""

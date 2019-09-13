@@ -7,14 +7,24 @@ const Book = props => {
   return (
     <div className={bookStyles.book}>
       <div className={bookStyles.bookHeader}>
-        <img src={props.book.node.bookImage.file.url}></img>
+        <div className={bookStyles.imageContainer}>
+          <img src={props.book.node.bookImage.file.url}></img>
+          <div className={bookStyles.imageMiddle}>
+            <div className={bookStyles.blog}>
+              <button>Blog</button>
+            </div>
+            <button>Amazon</button>
+            <button>Best Books</button>
+          </div>
+        </div>
+
         <h3>{props.book.node.bookTitle}</h3>
+        <p>
+          ~<span className={bookStyles.author}>{props.book.node.author}</span>~
+        </p>
       </div>
       <div className={bookStyles.bookBody}></div>
-      <div className={bookStyles.footer}>
-        <span>button</span>
-        <span>button</span>
-      </div>
+      <div className={bookStyles.footer}></div>
     </div>
   )
 }
