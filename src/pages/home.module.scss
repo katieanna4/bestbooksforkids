@@ -1,3 +1,8 @@
+$secondaryColor: #329d9f;
+$primaryColor: #15b6b8;
+$secondaryFont: Optima, sans-serif;
+$primaryFont: Trebuchet MS, sans-serif;
+
 body {
   background-color: #444340;
 }
@@ -5,8 +10,16 @@ body {
 .header {
   display: flex;
   justify-content: center;
+  font-family: $primaryFont;
+  font-weight: 900;
+  font-size: 26px;
 
   p {
     text-align: center;
+    font-weight: 400;
+    font-size: 18px;
+    font-family: $secondaryFont;
   }
+
+  margin-bottom: 6rem;
 }

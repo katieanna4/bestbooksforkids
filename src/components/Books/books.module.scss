@@ -1,4 +1,6 @@
 $mainColor: #15b6b8;
+$secondaryFont: Optima, sans-serif;
+$primaryFont: Trebuchet MS, sans-serif;
 * {
   box-sizing: border-box;
 }
@@ -18,7 +20,7 @@ $mainColor: #15b6b8;
   h3 {
     font-weight: 900;
     font-size: 22px;
-    font-family: "Courier New", Courier, monospace;
+    font-family: $secondaryFont;
   }
 }
 

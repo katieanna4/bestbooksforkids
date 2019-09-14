@@ -1,5 +1,9 @@
 $mainColor: #15b6b8;
 $secondaryColor: #329d9f;
+
+$secondaryFont: Optima, sans-serif;
+$primaryFont: Trebuchet MS, sans-serif;
+
 * {
   box-sizing: border-box;
 }
@@ -8,23 +12,27 @@ $secondaryColor: #329d9f;
   width: 100%;
   display: flex;
   justify-content: center;
+  // background-image: url("../../images/paint-hands.jpeg");
+  // background-size: contain;
 }
 
 .card {
-  background-color: $secondaryColor;
+  background-color: white;
   border-radius: 3%;
-  margin-top: 7rem;
+  margin-top: 10rem;
   width: 750px;
   height: 1000px;
   text-align: center;
 
   h1 {
-    color: white;
-    font-size: 2.5rem;
+    color: $secondaryColor;
+    font-size: 4rem;
+    font-family: $primaryFont;
+    text-shadow: 0px 8px $mainColor;
   }
 
   p {
-    color: white;
+    color: $secondaryColor;
   }
 }
 
@@ -38,15 +46,76 @@ $secondaryColor: #329d9f;
 
   input {
     border-radius: 3%;
+    font-size: 18px;
+    padding-left: 1rem;
+    font-family: $secondaryFont;
     background-color: white;
     height: 3.5rem;
     display: block;
     margin: 2rem;
-    border: solid 4px #353c51;
+    border: solid 4px $mainColor;
     color: #353c51;
   }
 
+  input:hover {
+    box-shadow: 0 10px 6px -6px black;
+    cursor: pointer;
+    transform: scale(1.01);
+  }
+
+  input:focus {
+    outline: none;
+    box-shadow: 0 10px 6px -6px black;
+    cursor: pointer;
+    transform: scale(1.01);
+  }
+
   textarea {
+    font-size: 20px;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    font-family: $secondaryFont;
     margin: 2rem;
+    border-radius: 3%;
+    background-color: white;
+    margin: 2rem;
+    border: solid 4px $mainColor;
+    color: #353c51;
+  }
+
+  textarea:hover {
+    box-shadow: 0 10px 6px -6px black;
+    cursor: pointer;
+    transform: scale(1.01);
+  }
+
+  textarea:focus {
+    outline: none;
+    box-shadow: 0 10px 6px -6px black;
+    cursor: pointer;
+    transform: scale(1.01);
+  }
+}
+
+.footer {
+  button {
+    margin: 1rem;
+    padding: 0.75rem;
+    border-radius: 6%;
+    border: solid 3px $secondaryColor;
+    background-color: $mainColor;
+    color: white;
+    font-family: $secondaryFont;
+    font-size: 18px;
+  }
+
+  button:hover {
+    box-shadow: 0 10px 6px -6px black;
+    cursor: pointer;
+    transform: scale(1.01);
+  }
+
+  button:focus {
+    outline: none;
   }
 }

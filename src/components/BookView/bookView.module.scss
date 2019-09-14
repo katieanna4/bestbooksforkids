@@ -1,6 +1,9 @@
 $secondaryColor: #329d9f;
 $primaryColor: #15b6b8;
 
+$secondaryFont: Optima, sans-serif;
+$primaryFont: Trebuchet MS, sans-serif;
+
 .visibleBooks {
   display: flex;
   justify-content: space-around;
@@ -21,10 +24,12 @@ $primaryColor: #15b6b8;
 
   h4 {
     color: black;
+    font-family: $secondaryFont;
   }
 }
 
 .select {
+  font-family: $secondaryFont;
   width: 350px;
   text-align: center;
 
@@ -34,9 +39,12 @@ $primaryColor: #15b6b8;
     width: 200px;
     height: 35px;
     color: white;
+    font-family: $secondaryFont;
+    font-size: 18px;
   }
 
   .option {
+    font-family: $secondaryFont;
     position: absolute;
     background-color: DodgerBlue;
     top: 100%;
@@ -59,9 +67,16 @@ $primaryColor: #15b6b8;
 .results {
   text-align: center;
   margin-top: 2.5rem;
+
+  font-family: $primaryFont;
+  color: $secondaryColor;
+  font-size: 22px;
 }
 
 .searchBar {
+  padding-left: 0.5rem;
+  font-size: 18px;
+  font-family: $secondaryFont;
   height: 35px;
   width: 200px;
   border-radius: 6%;
