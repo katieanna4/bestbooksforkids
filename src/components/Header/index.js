@@ -18,12 +18,7 @@ const Header = props => {
     <>
       <div className={headerStyles.jumbotron}>
         <div className={headerStyles.pageInfo}>
-          <img src={logoImage}></img>
           <h1>{data.site.siteMetadata.title}</h1>
-          <p>
-            information text will go here. I could make this a field in
-            contentful so that this message could be updated
-          </p>
         </div>
       </div>
       <nav className={headerStyles.navBar}>

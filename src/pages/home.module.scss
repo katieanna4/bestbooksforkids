@@ -1,10 +1,13 @@
-$secondaryColor: #329d9f;
-$primaryColor: #15b6b8;
+$mainColor: #9fd2cb;
+$secondaryColor: #d29b6c;
+$textColor: #f4b9a9;
+$darkText: #263147;
+$backgroundColor: #a6a9a9;
 $secondaryFont: Optima, sans-serif;
 $primaryFont: Trebuchet MS, sans-serif;
 
 body {
-  background-color: #444340;
+  background-color: $backgroundColor;
 }
 
 .header {
@@ -13,7 +16,7 @@ body {
   font-family: $primaryFont;
   font-weight: 900;
   font-size: 26px;
-
+  color: $darkText;
   p {
     text-align: center;
     font-weight: 400;

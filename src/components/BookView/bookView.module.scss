@@ -1,5 +1,8 @@
-$secondaryColor: #329d9f;
-$primaryColor: #15b6b8;
+$primaryColor: #9fd2cb;
+$secondaryColor: #d29b6c;
+$textColor: #f4b9a9;
+$darkText: #263147;
+$backgroundColor: #a6a9a9;
 
 $secondaryFont: Optima, sans-serif;
 $primaryFont: Trebuchet MS, sans-serif;
@@ -8,13 +11,13 @@ $primaryFont: Trebuchet MS, sans-serif;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  background-color: $secondaryColor;
+  background-color: $darkText;
   padding: 2rem;
 }
 
 .noBooks {
   height: 500px;
-  background-color: $secondaryColor;
+  background-color: $darkText;
   padding: 1rem;
 }
 
@@ -23,7 +26,7 @@ $primaryFont: Trebuchet MS, sans-serif;
   justify-content: space-around;
 
   h4 {
-    color: black;
+    color: $darkText;
     font-family: $secondaryFont;
   }
 }
@@ -34,7 +37,7 @@ $primaryFont: Trebuchet MS, sans-serif;
   text-align: center;
 
   select {
-    background-color: $primaryColor;
+    background-color: $secondaryColor;
     position: relative;
     width: 200px;
     height: 35px;
@@ -67,9 +70,8 @@ $primaryFont: Trebuchet MS, sans-serif;
 .results {
   text-align: center;
   margin-top: 2.5rem;
-
   font-family: $primaryFont;
-  color: $secondaryColor;
+  color: $darkText;
   font-size: 22px;
 }
 
@@ -84,7 +86,7 @@ $primaryFont: Trebuchet MS, sans-serif;
 
 .searchBar:focus {
   outline: none;
-  border: solid 4px $primaryColor;
+  border: solid 4px $secondaryColor;
 
   box-shadow: 0 10px 6px -6px black;
   transform: scale(1.05);

@@ -1,4 +1,8 @@
-$mainColor: #15b6b8;
+$mainColor: #9fd2cb;
+$secondaryColor: #d29b6c;
+$textColor: #f4b9a9;
+$darkText: #263147;
+$backgroundColor: #a6a9a9;
 $secondaryFont: Optima, sans-serif;
 $primaryFont: Trebuchet MS, sans-serif;
 * {
@@ -9,13 +13,13 @@ $primaryFont: Trebuchet MS, sans-serif;
   height: 475px;
   width: 400px;
   padding: 1rem;
-  background-color: #353c51;
-  border: solid 4px $mainColor;
+  background-color: white;
+  border: solid 4px $secondaryColor;
   border-radius: 3%;
   text-align: center;
   box-shadow: -6px 10px 6px -6px black;
   margin: 1rem;
-  color: white;
+  color: $darkText;
 
   h3 {
     font-weight: 900;
@@ -39,7 +43,7 @@ $primaryFont: Trebuchet MS, sans-serif;
 .imageContainer {
   height: 350px;
   width: 350px;
-  border: solid 4px $mainColor;
+  border: solid 4px $secondaryColor;
   border-radius: 3%;
   img {
     opacity: 1;
@@ -77,12 +81,12 @@ $primaryFont: Trebuchet MS, sans-serif;
     font-size: 14px;
     font-weight: 600;
     margin: 1rem;
-    background-color: #15b6b8;
+    background-color: $secondaryColor;
     height: 45px;
     width: 110px;
     border-radius: 8%;
-    border: solid 3px white;
-    color: white;
+    border: solid 3px $secondaryColor;
+    color: $darkText;
     font-family: "Courier New", Courier, monospace;
   }
 
