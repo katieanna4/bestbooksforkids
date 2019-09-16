@@ -50,7 +50,6 @@ const IndexPage = () => {
         </div>
       </div>
       <BookView books={data.allContentfulBook.edges} />
-      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}></div>
     </Layout>
   )
 }

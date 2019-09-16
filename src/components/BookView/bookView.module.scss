@@ -13,12 +13,14 @@ $primaryFont: Trebuchet MS, sans-serif;
   flex-wrap: wrap;
   background-color: $darkText;
   padding: 2rem;
+  margin-bottom: 0;
 }
 
 .noBooks {
   height: 500px;
   background-color: $darkText;
   padding: 1rem;
+  margin: 0;
 }
 
 .header {
