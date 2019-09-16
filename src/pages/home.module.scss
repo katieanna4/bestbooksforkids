@@ -15,14 +15,55 @@ body {
   justify-content: center;
   font-family: $primaryFont;
   font-weight: 900;
-  font-size: 26px;
+  font-size: 34px;
   color: $darkText;
   p {
     text-align: center;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 28px;
     font-family: $secondaryFont;
   }
 
   margin-bottom: 6rem;
+}
+
+@media only screen and (max-width: 1500px) {
+  .header {
+    font-size: 30px;
+    p {
+      font-size: 25px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  .header {
+    font-size: 26px;
+    p {
+      font-size: 20px;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    font-size: 20px;
+    p {
+      font-size: 20px;
+    }
+  }
+  body {
+    background-color: white;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .header {
+    margin: 0.15rem;
+    font-size: 18px;
+    text-align: center;
+    p {
+      font-size: 16px;
+    }
+  }
 }

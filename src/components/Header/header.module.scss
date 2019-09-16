@@ -16,7 +16,7 @@ $primaryFont: Trebuchet MS, sans-serif;
 
   background-color: white;
   h1 {
-    font-size: 5rem;
+    font-size: 7rem;
     font-weight: 800;
     color: $darkText;
     font-family: $primaryFont;
@@ -46,12 +46,18 @@ $primaryFont: Trebuchet MS, sans-serif;
       a {
         text-decoration: none;
         color: white;
+        font-family: $secondaryFont;
       }
     }
   }
 }
 
 @media only screen and (max-width: 1750px) {
+  .jumbotron {
+    h1 {
+      font-size: 6rem;
+    }
+  }
   .navBar {
     width: 100%;
     height: 55px;
@@ -68,6 +74,12 @@ $primaryFont: Trebuchet MS, sans-serif;
 }
 
 @media only screen and (max-width: 1500px) {
+  .pageInfo {
+    h1 {
+      font-size: 5rem;
+    }
+  }
+
   .navBar {
     width: 100%;
     height: 55px;
@@ -86,6 +98,12 @@ $primaryFont: Trebuchet MS, sans-serif;
 }
 
 @media only screen and (max-width: 1300px) {
+  .jumbotron {
+    h1 {
+      font-size: 4.5rem;
+    }
+  }
+
   .navBar {
     width: 100%;
     height: 50px;
@@ -104,9 +122,15 @@ $primaryFont: Trebuchet MS, sans-serif;
 }
 
 @media only screen and (max-width: 768px) {
+  .jumbotron {
+    h1 {
+      font-size: 3.75rem;
+    }
+  }
+
   .navBar {
     width: 100%;
-    height: 35px;
+    height: 40px;
 
     ul {
       display: flex;
@@ -115,16 +139,16 @@ $primaryFont: Trebuchet MS, sans-serif;
       margin-bottom: 0;
       li {
         list-style-type: none;
-        margin: 0.4rem 2rem 0rem 2rem;
+        margin: 0.5rem 2rem 1.5rem 2rem;
       }
     }
   }
 }
 
-@media only screen and (max-width: 480) {
+@media only screen and (max-width: 480px) {
   .navBar {
     width: 100%;
-    height: 30px;
+    height: 40px;
 
     ul {
       display: flex;
@@ -133,8 +157,30 @@ $primaryFont: Trebuchet MS, sans-serif;
       margin-bottom: 0;
       li {
         list-style-type: none;
-        margin: 0.4rem 1rem 0rem 1rem;
+        margin: 0.5rem 1.75rem 0.5rem 1.75rem;
       }
+    }
+  }
+
+  .jumbotron {
+    margin: 0 auto;
+    height: 6rem;
+    h1 {
+      margin: 0 auto;
+
+      font-size: 2.5rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  .jumbotron {
+    margin: 0 auto;
+    height: 6rem;
+    h1 {
+      margin: 0 auto;
+
+      font-size: 2rem;
     }
   }
 }

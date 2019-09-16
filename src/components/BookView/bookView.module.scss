@@ -33,6 +33,10 @@ $primaryFont: Trebuchet MS, sans-serif;
   }
 }
 
+.orCont {
+  display: none;
+}
+
 .select {
   font-family: $secondaryFont;
   width: 350px;
@@ -127,4 +131,58 @@ $primaryFont: Trebuchet MS, sans-serif;
 }
 
 .select-css {
+}
+
+@media only screen and (max-width: 1500px) {
+}
+
+@media only screen and (max-width: 1250) {
+}
+
+@media only screen and (max-width: 768px) {
+}
+
+@media only screen and (max-width: 480px) {
+  .header {
+    display: block;
+  }
+
+  .select {
+    font-family: $secondaryFont;
+    width: 100%;
+    text-align: center;
+
+    select {
+      background-color: $secondaryColor;
+      position: relative;
+      width: 125px;
+      height: 35px;
+      color: white;
+      font-family: $secondaryFont;
+      font-size: 18px;
+      text-align: center;
+    }
+  }
+
+  .searchContainer {
+    margin: 1.75rem auto;
+    width: 100%;
+    text-align: center;
+  }
+
+  .orCont {
+    display: block;
+    margin-top: 1.75rem;
+    width: 100%;
+    text-align: center;
+    font-family: $secondaryFont;
+  }
+
+  .visibleBooks {
+    padding: 0.5rem;
+    display: block;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 }

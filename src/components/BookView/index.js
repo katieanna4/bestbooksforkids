@@ -71,8 +71,7 @@ class BookView extends Component {
       this.state.allBooks[0],
       this.state.category
     )
-    console.log("{}{}{}{}{}{}{}{}{}")
-    console.log(books)
+
     this.setState({
       books,
     })
@@ -142,6 +141,10 @@ class BookView extends Component {
                 Newbury
               </option>
             </select>
+          </div>
+
+          <div className={bookViewStyles.orCont}>
+            <span>~ or ~</span>
           </div>
 
           <div className={bookViewStyles.searchContainer}>
