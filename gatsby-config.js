@@ -1,4 +1,5 @@
-const contentfulKeys = require("./contentful")
+const dotenv = require("dotenv")
+dotenv.config()
 module.exports = {
   siteMetadata: {
     title: `Best Books for Kids`,
@@ -20,8 +21,8 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: contentfulKeys.space_id,
-        accessToken: contentfulKeys.access_token,
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
     {
