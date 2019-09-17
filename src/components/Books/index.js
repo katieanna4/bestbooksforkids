@@ -13,8 +13,10 @@ const Book = props => {
             <div className={bookStyles.blog}>
               <button>Blog</button>
             </div>
-            <button>Amazon</button>
-            <button>Best Books</button>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <button>Amazon</button>
+              <button>Best Books</button>
+            </div>
           </div>
         </div>
 
