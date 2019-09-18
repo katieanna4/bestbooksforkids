@@ -87,7 +87,7 @@ $primaryFont: Trebuchet MS, sans-serif;
     border-radius: 8%;
     border: solid 3px $secondaryColor;
     color: white;
-    font-family: "Courier New", Courier, monospace;
+    font-family: $secondaryFont;
   }
 
   button:hover {
