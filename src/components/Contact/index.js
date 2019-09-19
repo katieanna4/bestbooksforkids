@@ -3,12 +3,45 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import { loadReCaptcha } from "react-recaptcha-google"
 import contactStyles from "./contact.module.scss"
 import ReCaptcha from "../ReCaptcha"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons"
 
 class Contact extends Component {
   state = {
     name: null,
     email: null,
     message: null,
+    nameValid: true,
+    emailValid: true,
+  }
+
+  handleInput = event => {
+    let name = event.target.name
+    let value = event.target.value
+
+    this.setState({
+      [name]: value,
+    })
+  }
+
+  validateEmail = email => {
+    let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    return re.test(String(email).toLowerCase())
+  }
+
+  handleSubmit = event => {
+    event.preventDefault()
+
+    if (!this.state.name) {
+      this.setState({
+        nameValid: false,
+      })
+    }
+    if (!this.validateEmail(this.state.email)) {
+      this.setState({
+        emailValid: false,
+      })
+    }
   }
 
   componentDidMount() {
@@ -26,16 +59,35 @@ class Contact extends Component {
           <div className={contactStyles.body}>
             <form>
               <input
+                onChange={this.handleInput}
                 type="name"
                 name="name"
                 placeholder="Enter your name"
               ></input>
+              {this.state.nameValid ? (
+                ""
+              ) : (
+                <FontAwesomeIcon
+                  className={contactStyles.validation}
+                  icon={faExclamationCircle}
+                />
+              )}
               <input
+                onChange={this.handleInput}
                 type="email"
                 name="email"
                 placeholder="Enter your email address"
               ></input>
+              {this.state.emailValid ? (
+                ""
+              ) : (
+                <FontAwesomeIcon
+                  className={contactStyles.validation}
+                  icon={faExclamationCircle}
+                />
+              )}
               <textarea
+                onChange={this.handleInput}
                 name="message"
                 rows="10"
                 cols="30"
@@ -45,7 +97,7 @@ class Contact extends Component {
           </div>
           <div className={contactStyles.footer}>
             <ReCaptcha />
-            <button>Submit Message</button>
+            <button onClick={this.handleSubmit}>Submit Message</button>
           </div>
         </div>
       </div>
