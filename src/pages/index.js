@@ -34,6 +34,9 @@ const IndexPage = () => {
             author
             category
             tags
+            amazonLink
+            goodReads
+            blogPost
           }
         }
       }

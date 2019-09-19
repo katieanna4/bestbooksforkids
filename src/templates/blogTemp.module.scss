@@ -1,0 +1,60 @@
+$primaryColor: #9fd2cb;
+$secondaryColor: #d29b6c;
+$textColor: #f4b9a9;
+$darkText: #263147;
+$backgroundColor: #a6a9a9;
+
+$secondaryFont: Optima, sans-serif;
+$primaryFont: Trebuchet MS, sans-serif;
+
+.container {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.post {
+  text-align: center;
+  margin: 3rem auto;
+  width: 1000px;
+  height: auto;
+  color: $darkText;
+  font-family: $secondaryFont;
+
+  .mainImage {
+    height: 800px;
+    width: 900px;
+  }
+
+  h1 {
+    font-family: $primaryFont;
+  }
+}
+
+.backButton {
+  text-align: center;
+  margin: 2rem auto;
+
+  a {
+    text-decoration: none;
+    font-size: 30px;
+    margin: auto 1rem;
+    color: $darkText;
+  }
+
+  a:focus {
+    color: $darkText;
+  }
+}
+
+.icons {
+  margin: auto 1rem;
+}
+
+.content {
+  width: 900px;
+}
+
+.blogBody {
+  text-align: start;
+}

@@ -1,13 +1,18 @@
 import React, { Component } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-
+import { loadReCaptcha } from "react-recaptcha-google"
 import contactStyles from "./contact.module.scss"
+import ReCaptcha from "../ReCaptcha"
 
 class Contact extends Component {
   state = {
     name: null,
     email: null,
     message: null,
+  }
+
+  componentDidMount() {
+    loadReCaptcha()
   }
 
   render() {
@@ -39,6 +44,7 @@ class Contact extends Component {
             </form>
           </div>
           <div className={contactStyles.footer}>
+            <ReCaptcha />
             <button>Submit Message</button>
           </div>
         </div>

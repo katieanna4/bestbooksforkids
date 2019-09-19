@@ -11,11 +11,22 @@ const Book = props => {
           <img src={props.book.node.bookImage.file.url}></img>
           <div className={bookStyles.imageMiddle}>
             <div className={bookStyles.blog}>
-              <button>Blog</button>
+              {props.book.node.blogPost ? (
+                <Link to={`blog/${props.book.node.blogPost}`}>
+                  <button>Blog</button>
+                </Link>
+              ) : (
+                ""
+              )}
             </div>
             <div style={{ display: "flex", justifyContent: "center" }}>
-              <button>Amazon</button>
-              <button>Best Books</button>
+              <a href={props.book.node.amazonLink} target="_blank">
+                <button>Amazon</button>
+              </a>
+              <a href={props.book.node.goodReads} target="_blank">
+                {" "}
+                <button>Good Reads</button>
+              </a>
             </div>
           </div>
         </div>
