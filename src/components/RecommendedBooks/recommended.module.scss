@@ -1,0 +1,179 @@
+$mainColor: #9fd2cb;
+$secondaryColor: #d29b6c;
+$textColor: #f4b9a9;
+$darkText: #263147;
+$backgroundColor: #a6a9a9;
+$secondaryFont: Optima, sans-serif;
+$primaryFont: Trebuchet MS, sans-serif;
+* {
+  box-sizing: border-box;
+}
+
+.book {
+  height: 300px;
+  width: 250px;
+  padding: 0.25rem;
+  background-color: white;
+  border: solid 4px $secondaryColor;
+  border-radius: 3%;
+  text-align: center;
+  box-shadow: -6px 10px 6px -6px black;
+  margin: 1rem;
+  color: $darkText;
+
+  h3 {
+    font-weight: 900;
+    font-size: 18px;
+    font-family: $secondaryFont;
+  }
+}
+
+.book:hover {
+  transform: scale(1.01);
+}
+
+.bookBody {
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.imageContainer {
+  height: 200px;
+  width: 200px;
+  border: solid 4px $secondaryColor;
+  border-radius: 3%;
+  img {
+    opacity: 1;
+    display: block;
+    height: 100%;
+    width: 100%;
+    transition: 0.5s ease;
+    backface-visibility: hidden;
+  }
+}
+
+.imageContainer:hover {
+  img {
+    opacity: 0.2;
+  }
+
+  .imageMiddle {
+    opacity: 1;
+  }
+}
+
+.imageMiddle {
+  transition: 0.5s ease;
+
+  opacity: 0;
+  position: absolute;
+
+  text-align: center;
+
+  width: 200px;
+  height: 200px;
+  margin-top: -10rem;
+
+  button {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 1rem;
+    background-color: $secondaryColor;
+    height: 45px;
+    width: 110px;
+    border-radius: 8%;
+    border: solid 3px $secondaryColor;
+    color: white;
+    font-family: $secondaryFont;
+  }
+
+  button:hover {
+    transform: scale(1.01);
+    box-shadow: 0 10px 6px -6px black;
+    cursor: pointer;
+  }
+
+  button:active {
+    outline: none;
+  }
+
+  button:focus {
+    outline: none;
+  }
+}
+
+.blog {
+  display: block;
+}
+
+.author {
+  margin: 0 0.25rem;
+  font-size: 14px;
+  font-family: Apple Chancery, cursive;
+}
+
+@media only screen and (max-width: 480px) {
+  .book {
+    height: 400px;
+    width: 325px;
+    display: flex;
+    justify-content: center;
+
+    h3 {
+      margin: 0px;
+    }
+  }
+
+  .imageContainer {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 0.25rem;
+  }
+
+  .imageMiddle {
+    position: absolute;
+
+    text-align: center;
+
+    width: 295px;
+    height: 200px;
+    margin-top: -10rem;
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  .book {
+    height: 400px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+
+    h3 {
+      margin: 0px;
+    }
+  }
+
+  .imageContainer {
+    width: 275px;
+    height: 275px;
+    margin-bottom: 0.25rem;
+  }
+
+  .imageMiddle {
+    position: absolute;
+
+    text-align: center;
+
+    width: 275px;
+    height: 200px;
+    margin-top: -10rem;
+
+    button {
+      width: 100px;
+      margin: 0.5rem;
+    }
+  }
+}

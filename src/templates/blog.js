@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
+import RecommendedBooks from "../components/RecommendedBooks"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faCalendarAlt,
@@ -82,16 +83,30 @@ class BlogPost extends Component {
               </Link>
             </div>
             <h1>{this.state.post.title}</h1>
+            <p>
+              <FontAwesomeIcon className={blogStyles.icons} icon={faUser} />{" "}
+              Katie Lewis
+            </p>
             <img
               className={blogStyles.mainImage}
               src={this.state.post.mainImage.file.url}
             ></img>
 
-            <p>{this.state.post.published}</p>
-            <p>- Katie Lewis</p>
-            <p>{this.state.post.shortDescription}</p>
             <div className={blogStyles.blogBody}>
               {documentToReactComponents(this.state.post.blogBody.json)}
+            </div>
+            <p>{this.state.post.published}</p>
+            <div className={blogStyles.relatedHeader}>
+              <h3>
+                Here are some of the books I recommend for Young Adult Romance
+              </h3>
+            </div>
+            <div className={blogStyles.relatedBooks}>
+              <ul>
+                {this.state.books.edges.map(index => {
+                  return <RecommendedBooks book={index} />
+                })}
+              </ul>
             </div>
           </div>
         </div>
