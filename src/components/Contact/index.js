@@ -36,10 +36,18 @@ class Contact extends Component {
       this.setState({
         nameValid: false,
       })
+    } else {
+      this.setState({
+        nameValid: true,
+      })
     }
     if (!this.validateEmail(this.state.email)) {
       this.setState({
         emailValid: false,
+      })
+    } else {
+      this.setState({
+        emailValid: true,
       })
     }
   }
@@ -54,38 +62,42 @@ class Contact extends Component {
         <div className={contactStyles.card}>
           <div className={contactStyles.header}>
             <h1>Contact</h1>
-            <p>I would love to hear from you!</p>
+            {/* <p>I would love to hear from you!</p> */}
           </div>
           <div className={contactStyles.body}>
             <form>
-              <input
-                onChange={this.handleInput}
-                type="name"
-                name="name"
-                placeholder="Enter your name"
-              ></input>
-              {this.state.nameValid ? (
-                ""
-              ) : (
-                <FontAwesomeIcon
-                  className={contactStyles.validation}
-                  icon={faExclamationCircle}
-                />
-              )}
-              <input
-                onChange={this.handleInput}
-                type="email"
-                name="email"
-                placeholder="Enter your email address"
-              ></input>
-              {this.state.emailValid ? (
-                ""
-              ) : (
-                <FontAwesomeIcon
-                  className={contactStyles.validation}
-                  icon={faExclamationCircle}
-                />
-              )}
+              <div className={contactStyles.inputWrapper}>
+                <input
+                  onChange={this.handleInput}
+                  type="name"
+                  name="name"
+                  placeholder="Enter your name"
+                ></input>
+                {this.state.nameValid ? (
+                  ""
+                ) : (
+                  <FontAwesomeIcon
+                    className={contactStyles.validation}
+                    icon={faExclamationCircle}
+                  />
+                )}
+              </div>
+              <div className={contactStyles.inputWrapper}>
+                <input
+                  onChange={this.handleInput}
+                  type="email"
+                  name="email"
+                  placeholder="Enter your email address"
+                ></input>
+                {this.state.emailValid ? (
+                  ""
+                ) : (
+                  <FontAwesomeIcon
+                    className={contactStyles.validation}
+                    icon={faExclamationCircle}
+                  />
+                )}
+              </div>
               <textarea
                 onChange={this.handleInput}
                 name="message"

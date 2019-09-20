@@ -27,7 +27,7 @@ $primaryFont: Trebuchet MS, sans-serif;
 .card {
   background-color: transparent;
   border-radius: 3%;
-  margin-top: 10rem;
+  margin: 5rem auto;
   width: 750px;
   height: 1000px;
   text-align: center;
@@ -41,7 +41,8 @@ $primaryFont: Trebuchet MS, sans-serif;
 
   p {
     color: $darkText;
-    font-size: 20px;
+    font-size: 26px;
+    font-weight: bold;
   }
 }
 
@@ -53,7 +54,14 @@ $primaryFont: Trebuchet MS, sans-serif;
     text-align: center;
   }
 
+  .input-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
   input {
+    flex-grow: 1;
     border-radius: 3%;
     font-size: 18px;
     padding-left: 1rem;
@@ -114,7 +122,8 @@ $primaryFont: Trebuchet MS, sans-serif;
   font-size: 28px;
   color: $darkText;
   display: inline-block;
-  margin-top: -5.5rem;
+  position: absolute;
+  right: 0;
 }
 
 .footer {
