@@ -23,6 +23,7 @@ $primaryFont: Trebuchet MS, sans-serif;
 
   .content {
     opacity: 1;
+    display: block;
 
     img {
       opacity: 1;
@@ -33,6 +34,7 @@ $primaryFont: Trebuchet MS, sans-serif;
 .content {
   transition: 0.5s ease;
   opacity: 0;
+  display: none;
   color: $darkText;
   width: 800px;
   height: auto;
@@ -51,10 +53,6 @@ $primaryFont: Trebuchet MS, sans-serif;
     height: 300px;
     margin: 1rem;
     border: solid 4px $darkText;
-  }
-
-  img:hover {
-    cursor: pointer;
   }
 
   span {
@@ -98,6 +96,10 @@ $primaryFont: Trebuchet MS, sans-serif;
 
 .contentFooter {
   font-family: $secondaryFont;
+  a {
+    text-decoration: none;
+    color: $darkText;
+  }
 }
 
 .footerButton {
@@ -434,6 +436,10 @@ $primaryFont: Trebuchet MS, sans-serif;
     width: 350px;
     h1 {
       font-size: 16px;
+    }
+
+    a:first-child {
+      height: 100px;
     }
 
     img {

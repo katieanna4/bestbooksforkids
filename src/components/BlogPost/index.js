@@ -13,7 +13,10 @@ const BlogPost = props => {
   return (
     <div className={blogStyles.card}>
       <div>
-        <Link to={`blog/${props.post.node.slug}`}>
+        <Link
+          state={{ comingFrom: "blog" }}
+          to={`blog/${props.post.node.slug}`}
+        >
           <img
             className={blogStyles.mainImage}
             src={props.post.node.mainImage.file.url}
@@ -42,7 +45,11 @@ const BlogPost = props => {
           <FontAwesomeIcon className={blogStyles.icon} icon={faCalendarAlt} />
           {props.post.node.published}
         </p>
-        <Link className={blogStyles.link} to={`blog/${props.post.node.slug}`}>
+        <Link
+          state={{ comingFrom: "blog" }}
+          className={blogStyles.link}
+          to={`blog/${props.post.node.slug}`}
+        >
           <p>
             <FontAwesomeIcon className={blogStyles.icon} icon={faShareSquare} />{" "}
             Keep Reading

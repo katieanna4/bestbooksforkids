@@ -44,16 +44,11 @@ const FeaturedBook = () => {
       <div className={featuredStyle.content}>
         <h1>{data.allContentfulFeaturedBook.edges[0].node.headingMessage}</h1>
         <div className={featuredStyle.headerWrapper}>
-          <Link
-            to={`blog/${data.allContentfulFeaturedBook.edges[0].node.slug}`}
-          >
-            <img
-              src={
-                data.allContentfulFeaturedBook.edges[0].node.blogImage.file.url
-              }
-            ></img>
-          </Link>
-
+          <img
+            src={
+              data.allContentfulFeaturedBook.edges[0].node.blogImage.file.url
+            }
+          ></img>
           <div>
             <p className={featuredStyle.contentTitle}>
               {data.allContentfulFeaturedBook.edges[0].node.blogTitle}

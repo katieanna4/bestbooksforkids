@@ -74,13 +74,23 @@ class BlogPost extends Component {
         <div className={blogStyles.post}>
           <div className={blogStyles.content}>
             <div className={blogStyles.backButton}>
-              <Link to="/blog">
-                {" "}
-                <FontAwesomeIcon
-                  className={blogStyles.icons}
-                  icon={faReplyAll}
-                />{" "}
-              </Link>
+              {this.props.location.state.comingFrom === "blog" ? (
+                <Link to="/blog">
+                  {" "}
+                  <FontAwesomeIcon
+                    className={blogStyles.icons}
+                    icon={faReplyAll}
+                  />{" "}
+                </Link>
+              ) : (
+                <Link to="/">
+                  {" "}
+                  <FontAwesomeIcon
+                    className={blogStyles.icons}
+                    icon={faReplyAll}
+                  />{" "}
+                </Link>
+              )}
             </div>
             <h1>{this.state.post.title}</h1>
             <p>
