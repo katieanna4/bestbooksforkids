@@ -18,7 +18,10 @@ const IndexPage = () => {
                 url
               }
             }
-            bookTitle
+            blogTitle
+            slug
+            shortDescription
+            headingMessage
           }
         }
       }

@@ -4,12 +4,108 @@ $textColor: #f4b9a9;
 $darkText: #263147;
 $backgroundColor: #a6a9a9;
 
+$secondaryFont: Optima, sans-serif;
+$primaryFont: Trebuchet MS, sans-serif;
+
 .body {
   width: 100%;
   img {
     height: 800px;
     width: 100%;
+    opacity: 1;
   }
+}
+
+.body:hover {
+  img {
+    opacity: 0.3;
+  }
+
+  .content {
+    opacity: 1;
+
+    img {
+      opacity: 1;
+    }
+  }
+}
+
+.content {
+  transition: 0.5s ease;
+  opacity: 0;
+  color: $darkText;
+  width: 800px;
+  height: auto;
+  position: absolute;
+  top: 6%;
+  left: 30%;
+  text-align: center;
+  h1 {
+    font-family: $primaryFont;
+    font-size: 36px;
+  }
+
+  img {
+    opacity: 1;
+    width: 350px;
+    height: 300px;
+    margin: 1rem;
+    border: solid 4px $darkText;
+  }
+
+  img:hover {
+    cursor: pointer;
+  }
+
+  span {
+    font-family: $secondaryFont;
+    color: $darkText;
+  }
+  span:hover {
+    cursor: pointer;
+  }
+}
+.icons {
+  margin: 0 0.5rem;
+  font-size: 18px;
+  color: $darkText;
+}
+
+.icons:hover {
+  cursor: pointer;
+}
+
+.contentTitle {
+  font-size: 24px;
+  font-family: $primaryFont;
+}
+
+// .contentTitle:hover {
+//   cursor: pointer;
+// }
+
+.contentBody {
+  margin: 2rem auto;
+  width: 400px;
+
+  p {
+    line-height: 1.75rem;
+    font-size: 18px;
+    font-family: $secondaryFont;
+    font-style: italic;
+  }
+}
+
+.contentFooter {
+  font-family: $secondaryFont;
+}
+
+.footerButton {
+  font-size: 28px;
+}
+
+.footerButton:hover {
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 1750px) {
@@ -18,6 +114,22 @@ $backgroundColor: #a6a9a9;
     img {
       height: 800px;
       width: 100%;
+    }
+  }
+
+  .content {
+    position: absolute;
+    top: 6%;
+    left: 25%;
+    text-align: center;
+    h1 {
+      font-size: 36px;
+    }
+
+    img {
+      width: 350px;
+      height: 300px;
+      margin: 1rem;
     }
   }
 }
@@ -30,6 +142,22 @@ $backgroundColor: #a6a9a9;
       width: 100%;
     }
   }
+
+  .content {
+    position: absolute;
+    top: 4%;
+    left: 18%;
+    text-align: center;
+    h1 {
+      font-size: 36px;
+    }
+
+    img {
+      width: 250px;
+      height: 200px;
+      margin: 1rem;
+    }
+  }
 }
 
 @media only screen and (max-width: 1250px) {
@@ -38,6 +166,43 @@ $backgroundColor: #a6a9a9;
     img {
       height: 500px;
       width: 100%;
+    }
+  }
+
+  .content {
+    position: absolute;
+    top: 4%;
+    left: 17%;
+    text-align: center;
+    h1 {
+      font-size: 30px;
+      margin-top: 1.75rem;
+      margin-bottom: 0;
+    }
+
+    img {
+      width: 250px;
+      height: 200px;
+      margin: 0.5rem;
+    }
+  }
+
+  .contentTitle {
+    margin: 0.75rem;
+  }
+
+  .contentBody {
+    margin: 0.75rem auto;
+    width: 400px;
+
+    p {
+      max-height: 100px;
+      height: 100px;
+      overflow: scroll;
+      line-height: 1.5rem;
+      font-size: 18px;
+      font-family: $secondaryFont;
+      font-style: italic;
     }
   }
 }
@@ -50,6 +215,29 @@ $backgroundColor: #a6a9a9;
       width: 100%;
     }
   }
+
+  .content {
+    position: absolute;
+    top: 4%;
+    left: 3%;
+    width: 700px;
+    text-align: center;
+    h1 {
+      font-size: 36px;
+    }
+
+    img {
+      width: 250px;
+      height: 200px;
+      margin: 1rem;
+    }
+  }
+
+  .headerWrapper {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-evenly;
+  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -58,6 +246,22 @@ $backgroundColor: #a6a9a9;
     img {
       height: 225px;
       width: 100%;
+    }
+  }
+
+  .content {
+    position: absolute;
+    top: 6%;
+    left: 25%;
+    text-align: center;
+    h1 {
+      font-size: 36px;
+    }
+
+    img {
+      width: 350px;
+      height: 300px;
+      margin: 1rem;
     }
   }
 }
