@@ -1,0 +1,194 @@
+$primaryColor: #9fd2cb;
+$secondaryColor: #d29b6c;
+$textColor: #f4b9a9;
+$darkText: #263147;
+$backgroundColor: #a6a9a9;
+
+$secondaryFont: Optima, sans-serif;
+$primaryFont: Trebuchet MS, sans-serif;
+
+.container {
+  width: 100%;
+}
+
+.visiblePosts {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: white;
+  padding: 2rem;
+  margin: 0 2rem;
+  height: auto;
+}
+
+.noPosts {
+  height: 500px;
+  background-color: $darkText;
+  padding: 1rem;
+  margin: 0;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+
+  h4 {
+    color: $darkText;
+    font-family: $secondaryFont;
+  }
+}
+
+.orCont {
+  display: none;
+}
+
+.select {
+  font-family: $secondaryFont;
+  width: 350px;
+  text-align: center;
+
+  select {
+    background-color: $secondaryColor;
+    position: relative;
+    width: 200px;
+    height: 35px;
+    color: white;
+    font-family: $secondaryFont;
+    font-size: 18px;
+  }
+
+  .option {
+    font-family: $secondaryFont;
+    position: absolute;
+    background-color: DodgerBlue;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+  }
+
+  select:focus {
+    outline: none;
+  }
+
+  select:hover {
+    cursor: pointer;
+    box-shadow: 0 10px 6px -6px black;
+    transform: scale(1.05);
+  }
+}
+
+.results {
+  text-align: center;
+  margin-top: 2.5rem;
+  font-family: $primaryFont;
+  color: $darkText;
+  font-size: 22px;
+}
+
+.searchBar {
+  padding-left: 0.5rem;
+  font-size: 18px;
+  font-family: $secondaryFont;
+  height: 35px;
+  width: 200px;
+  border-radius: 6%;
+}
+
+.searchBar:focus {
+  outline: none;
+  border: solid 4px $secondaryColor;
+
+  box-shadow: 0 10px 6px -6px black;
+  transform: scale(1.05);
+  text-decoration-color: #15b6b8;
+}
+
+.searchBar:hover {
+  cursor: pointer;
+
+  box-shadow: 0 10px 6px -6px black;
+  transform: scale(1.05);
+}
+
+.searchBtn {
+  height: 41px;
+  width: 41px;
+  background-color: $secondaryColor;
+  margin-left: 1rem;
+  border-radius: 50%;
+  color: white;
+}
+.searchBtn:focus {
+  outline: none;
+}
+
+.searchBtn:hover {
+  box-shadow: 0 8px 6px -6px black;
+  cursor: pointer;
+  transform: scale(1.1);
+  border: solid 2px $primaryColor;
+}
+
+.searchContainer {
+  width: 350px;
+  text-align: center;
+}
+
+.select-css {
+}
+
+@media only screen and (max-width: 1500px) {
+}
+
+@media only screen and (max-width: 1250) {
+}
+
+@media only screen and (max-width: 768px) {
+}
+
+@media only screen and (max-width: 480px) {
+  .header {
+    display: block;
+  }
+
+  .select {
+    font-family: $secondaryFont;
+    width: 100%;
+    text-align: center;
+
+    select {
+      background-color: $secondaryColor;
+      position: relative;
+      width: 125px;
+      height: 35px;
+      color: white;
+      font-family: $secondaryFont;
+      font-size: 18px;
+      text-align: center;
+    }
+  }
+
+  .searchContainer {
+    margin: 1.75rem auto;
+    width: 100%;
+    text-align: center;
+  }
+
+  .orCont {
+    display: block;
+    margin-top: 1.75rem;
+    width: 100%;
+    text-align: center;
+    font-family: $secondaryFont;
+  }
+
+  .visibleBooks {
+    padding: 0.5rem;
+    display: block;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}

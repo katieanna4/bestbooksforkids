@@ -21,15 +21,31 @@ const Layout = props => {
 
   return (
     <>
-      <div className={layoutStyle.body}>
-        <div className={layoutStyle.container}>
-          <Header header={props.header} />
-          <FeaturedBook />
-          <main>{props.children}</main>
-          <Contact />
-          <Footer />
-        </div>
-      </div>
+      {props.page === "home" ? (
+        <>
+          <div className={layoutStyle.body}>
+            <div className={layoutStyle.container}>
+              <Header header={props.header} />
+              <FeaturedBook />
+              <main>{props.children}</main>
+              <Contact />
+              <Footer />
+            </div>
+          </div>
+        </>
+      ) : (
+        <>
+          <div className={layoutStyle.body}>
+            <div className={layoutStyle.container}>
+              <Header header={props.header} />
+
+              <main>{props.children}</main>
+
+              <Footer />
+            </div>
+          </div>
+        </>
+      )}
     </>
   )
 }

@@ -47,7 +47,7 @@ const IndexPage = () => {
   `)
 
   return (
-    <Layout header="Home">
+    <Layout page="home" header="Home">
       <SEO title="Home" />
       <div className={homeStyles.header}>
         <div>

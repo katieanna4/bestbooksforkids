@@ -4,7 +4,7 @@ import BlogPost from "../components/BlogPost"
 import Layout from "../components/layout"
 
 import SEO from "../components/seo"
-
+import BlogHeader from "../components/BlogHeader"
 import blogStyles from "./blog.module.scss"
 
 const BlogPage = () => {
@@ -22,6 +22,8 @@ const BlogPage = () => {
             }
             shortDescription
             published(fromNow: true)
+            tags
+            category
           }
         }
       }
@@ -29,14 +31,16 @@ const BlogPage = () => {
   `)
 
   return (
-    <Layout header="Blog">
+    <Layout page="blog" header="Blog">
       <SEO title="Blog" />
       <div className={blogStyles.container}>
-        <ul>
+        <BlogHeader blogPosts={data.allContentfulBlogPost.edges} />
+
+        {/* <ul>
           {data.allContentfulBlogPost.edges.map(index => {
             return <BlogPost post={index} />
           })}
-        </ul>
+        </ul> */}
       </div>
     </Layout>
   )
