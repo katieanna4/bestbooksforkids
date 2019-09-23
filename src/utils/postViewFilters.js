@@ -2,9 +2,6 @@ import { array } from "prop-types"
 
 const postViewFilters = {
   getCategory: (postArr, category) => {
-    console.log("{}{}{}{}{}{}{}{}{}{}{}{")
-    console.log(postArr, category)
-
     let results = []
 
     postArr.forEach(index => {
@@ -13,8 +10,7 @@ const postViewFilters = {
       if (typeof post.node.category === "string") {
         post.node.category = post.node.category.split(", ")
       }
-      console.log(post)
-      console.log(post.node)
+
       if (post.node.category.includes(category)) {
         results.push(post)
       }
@@ -65,9 +61,6 @@ const postViewFilters = {
           lowerCaseTags.push(index.toLowerCase())
         })
       }
-      console.log("{}{}{}{}{}{}{}{}{}{}")
-      console.log(postViewFilters.searchArrayString(categories, search))
-      console.log(postViewFilters.searchArrayString(lowerCaseTags, search))
 
       if (categories.includes(search.toLowerCase())) {
         results.push(post)

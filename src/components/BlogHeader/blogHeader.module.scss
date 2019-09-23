@@ -11,6 +11,25 @@ $primaryFont: Trebuchet MS, sans-serif;
   width: 100%;
 }
 
+.blogHeader {
+  display: flex;
+  justify-content: center;
+
+  div {
+    width: 500px;
+    text-align: center;
+    margin: 3rem auto;
+    font-family: $secondaryFont;
+    h1 {
+      font-family: $primaryFont;
+    }
+
+    p {
+      line-height: 1.75rem;
+    }
+  }
+}
+
 .visiblePosts {
   display: flex;
   justify-content: center;
@@ -43,19 +62,63 @@ $primaryFont: Trebuchet MS, sans-serif;
   display: none;
 }
 
+.selectContainer {
+  display: flex;
+  justify-content: start;
+}
+
 .select {
   font-family: $secondaryFont;
   width: 350px;
-  text-align: center;
+  text-align: start;
 
   select {
     background-color: $secondaryColor;
     position: relative;
-    width: 200px;
+    width: 150px;
     height: 35px;
     color: white;
     font-family: $secondaryFont;
     font-size: 18px;
+  }
+
+  .option {
+    font-family: $secondaryFont;
+    position: absolute;
+    background-color: DodgerBlue;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+  }
+
+  select:focus {
+    outline: none;
+  }
+
+  select:hover {
+    cursor: pointer;
+    box-shadow: 0 10px 6px -6px black;
+    transform: scale(1.05);
+  }
+}
+
+.subCategory {
+  font-family: $secondaryFont;
+  width: 175px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+
+  select {
+    background-color: $secondaryColor;
+    position: relative;
+    width: 175px;
+    height: 35px;
+    color: white;
+    font-family: $secondaryFont;
+    font-size: 18px;
+    margin: 0 1rem;
   }
 
   .option {
