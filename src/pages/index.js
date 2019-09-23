@@ -43,6 +43,19 @@ const IndexPage = () => {
           }
         }
       }
+      allContentfulCategories {
+        edges {
+          node {
+            category
+            subCategories {
+              subCategories
+            }
+            tags {
+              tags
+            }
+          }
+        }
+      }
     }
   `)
 
@@ -55,7 +68,10 @@ const IndexPage = () => {
           <p>Search through my recommended books</p>
         </div>
       </div>
-      <BookView books={data.allContentfulBook.edges} />
+      <BookView
+        books={data.allContentfulBook.edges}
+        categories={data.allContentfulCategories}
+      />
     </Layout>
   )
 }

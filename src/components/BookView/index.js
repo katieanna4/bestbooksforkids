@@ -9,6 +9,7 @@ import bookViewFilters from "../../utils/bookViewFilters"
 class BookView extends Component {
   state = {
     allBooks: [this.props.books],
+    allCategories: [this.props.categories],
     books: [],
     category: "Top Ten",
     searchParameter: undefined,
