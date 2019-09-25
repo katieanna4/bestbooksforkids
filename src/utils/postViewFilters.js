@@ -20,6 +20,7 @@ const postViewFilters = {
   },
 
   searchArrayString: (array, term) => {
+    console.log(array)
     let results = false
     array.forEach(index => {
       let string = new String(index)
@@ -32,7 +33,7 @@ const postViewFilters = {
     return results
   },
 
-  searchposts: (postArr, search) => {
+  searchPosts: (postArr, search) => {
     let results = []
 
     console.log(postArr)

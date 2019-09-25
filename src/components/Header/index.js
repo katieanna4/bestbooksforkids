@@ -27,7 +27,7 @@ const Header = props => {
             <Link
               style={
                 props.header === "Home"
-                  ? { borderBottom: "solid 2px white", marginBottom: "5px" }
+                  ? { borderBottom: "solid 3px white", marginBottom: "5px" }
                   : { border: "none" }
               }
               to="/"
@@ -39,7 +39,7 @@ const Header = props => {
             <Link
               style={
                 props.header === "About"
-                  ? { borderBottom: "solid 2px white", marginBottom: "5px" }
+                  ? { borderBottom: "solid 3px white", marginBottom: "5px" }
                   : { border: "none" }
               }
               to="/about"
@@ -51,7 +51,7 @@ const Header = props => {
             <Link
               style={
                 props.header === "Blog"
-                  ? { borderBottom: "solid 2px white", marginBottom: "5px" }
+                  ? { borderBottom: "solid 3px white", marginBottom: "5px" }
                   : { border: "none" }
               }
               to="/blog"

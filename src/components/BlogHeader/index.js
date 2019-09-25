@@ -95,7 +95,7 @@ class BlogHeader extends Component {
       return false
     } else {
       document.getElementById("search-bar").value = ""
-      let posts = postViewFilters.searchBooks(
+      let posts = postViewFilters.searchPosts(
         this.state.allPosts[0],
         this.state.searchParameter
       )
@@ -279,9 +279,6 @@ class BlogHeader extends Component {
               onKeyUp={this.handleInput}
               placeholder="Search.."
             ></input>
-            <button className={styles.searchBtn} onClick={this.handleSubmit}>
-              <FontAwesomeIcon icon={faSearch} />{" "}
-            </button>
           </div>
         </div>
         <div className={styles.results}>

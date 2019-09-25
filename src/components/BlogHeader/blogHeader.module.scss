@@ -69,13 +69,17 @@ $primaryFont: Trebuchet MS, sans-serif;
 
 .select {
   font-family: $secondaryFont;
-  width: 350px;
+  width: 450px;
   text-align: start;
+
+  h3 {
+    font-size: 28px;
+  }
 
   select {
     background-color: $secondaryColor;
     position: relative;
-    width: 150px;
+    width: 200px;
     height: 35px;
     color: white;
     font-family: $secondaryFont;
@@ -154,17 +158,18 @@ $primaryFont: Trebuchet MS, sans-serif;
   padding-left: 0.5rem;
   font-size: 18px;
   font-family: $secondaryFont;
-  height: 35px;
-  width: 200px;
+  height: 45px;
+  width: 100%;
   border-radius: 6%;
+  background-color: whitesmoke;
 }
 
 .searchBar:focus {
   outline: none;
-  border: solid 4px $secondaryColor;
+  border: solid 4px #add8e6;
 
   box-shadow: 0 10px 6px -6px black;
-  transform: scale(1.05);
+  transform: scale(1.01);
   text-decoration-color: #15b6b8;
 }
 
@@ -172,7 +177,7 @@ $primaryFont: Trebuchet MS, sans-serif;
   cursor: pointer;
 
   box-shadow: 0 10px 6px -6px black;
-  transform: scale(1.05);
+  transform: scale(1.01);
 }
 
 .searchBtn {
@@ -195,8 +200,12 @@ $primaryFont: Trebuchet MS, sans-serif;
 }
 
 .searchContainer {
-  width: 350px;
+  width: 450px;
   text-align: center;
+
+  h3 {
+    font-size: 28px;
+  }
 }
 
 .select-css {

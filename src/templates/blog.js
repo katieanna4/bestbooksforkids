@@ -4,7 +4,8 @@ import Layout from "../components/layout"
 import RecommendedBooks from "../components/RecommendedBooks"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
-  faCalendarAlt,
+  faAngleLeft,
+  faAngleRight,
   faUser,
   faReplyAll,
 } from "@fortawesome/free-solid-svg-icons"
@@ -62,10 +63,106 @@ class BlogPost extends Component {
   state = {
     post: this.props.data.contentfulBlogPost,
     books: this.props.data.allContentfulBook,
+    visibleBooks: [],
+    currentIndex: 0,
+    pastIndex: 0,
   }
 
   componentDidMount() {
     console.log(this.props)
+    // if (this.state.books.edges.length > 3) {
+    //   let books = this.state.books.edges.slice(0, 3)
+    //   this.setState({
+    //     visibleBooks: books,
+    //   })
+    // } else {
+    //   let books = this.state.books.edges
+    //   this.setState({
+    //     visibleBooks: books,
+    //   })
+    // }
+    this.getBooks()
+  }
+
+  getBooks = () => {
+    if (this.state.books.edges.length > 3) {
+      let arr = []
+      for (
+        let i = this.state.currentIndex;
+        i < [this.state.currentIndex + 3];
+        i++
+      ) {
+        if (i < 0) {
+          let num = this.state.books.edges.length - 1
+          arr.push(this.state.books.edges[num])
+        } else if (i > this.state.books.edges.length - 1) {
+          arr.push(this.state.books.edges[i - this.state.books.edges.length])
+        } else {
+          arr.push(this.state.books.edges[i])
+        }
+      }
+
+      this.setState({
+        visibleBooks: arr,
+      })
+    } else if (this.state.books.edges.length > 0) {
+      let books = this.state.books.edges
+      this.setState({
+        visibleBooks: books,
+      })
+    } else {
+      this.setState({
+        visibleBooks: false,
+      })
+    }
+  }
+
+  next = () => {
+    let sub
+
+    let max = this.state.visibleBooks.length
+
+    if (this.state.currentIndex < 0) {
+      sub = this.state.visibleBooks.length - 1
+    } else {
+      sub = this.state.currentIndex + 1
+    }
+
+    if (sub > max) {
+      sub = 0
+    }
+
+    this.setState(
+      {
+        currentIndex: sub,
+      },
+      () => {
+        this.getBooks()
+      }
+    )
+  }
+
+  prev = () => {
+    let add
+    let max = this.state.visibleBooks.length
+    if (this.state.currentIndex < 0) {
+      add = this.state.visibleBooks.length - 1
+    } else {
+      add = this.state.currentIndex - 1
+    }
+
+    if (add > max) {
+      add = 0
+    }
+
+    this.setState(
+      {
+        currentIndex: add,
+      },
+      () => {
+        this.getBooks()
+      }
+    )
   }
 
   render() {
@@ -93,7 +190,7 @@ class BlogPost extends Component {
               )}
             </div>
             <h1>{this.state.post.title}</h1>
-            <p>
+            <p className={blogStyles.author}>
               <FontAwesomeIcon className={blogStyles.icons} icon={faUser} />{" "}
               Katie Lewis
             </p>
@@ -105,18 +202,36 @@ class BlogPost extends Component {
             <div className={blogStyles.blogBody}>
               {documentToReactComponents(this.state.post.blogBody.json)}
             </div>
-            <p>{this.state.post.published}</p>
+            <p className={blogStyles.published}>{this.state.post.published}</p>
             <div className={blogStyles.relatedHeader}>
               <h3>
                 Here are some of the books I recommend for Young Adult Romance
               </h3>
             </div>
             <div className={blogStyles.relatedBooks}>
+              {this.state.books.edges.length > 3 ? (
+                <FontAwesomeIcon
+                  onClick={this.prev}
+                  className={blogStyles.arrow}
+                  icon={faAngleLeft}
+                />
+              ) : (
+                ""
+              )}
               <ul>
-                {this.state.books.edges.map(index => {
+                {this.state.visibleBooks.map(index => {
                   return <RecommendedBooks book={index} />
                 })}
               </ul>
+              {this.state.books.edges.length > 3 ? (
+                <FontAwesomeIcon
+                  onClick={this.next}
+                  className={blogStyles.arrow}
+                  icon={faAngleRight}
+                />
+              ) : (
+                ""
+              )}
             </div>
           </div>
         </div>
