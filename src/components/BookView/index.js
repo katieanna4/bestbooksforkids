@@ -14,11 +14,40 @@ class BookView extends Component {
     category: "Top Ten",
     searchParameter: undefined,
     showing: "Top Ten",
+    subCategory: null,
+    subCat: null,
+  }
+
+  getSubCategory = () => {
+    let arr = this.state.allCategories[0].edges.map(index => {
+      return index.node.category
+    })
+
+    if (this.state.category === "Top Ten") {
+      let subArr = ["A-Z", "Z-A"]
+      this.setState({
+        subCategory: subArr,
+        subCat: subArr[0],
+      })
+    } else {
+      let index = arr.indexOf(this.state.category)
+      let subArr = this.state.allCategories[0].edges[
+        index
+      ].node.subCategories.subCategories.split(", ")
+      this.setState({
+        subCategory: subArr,
+        subCat: subArr[0],
+      })
+    }
   }
 
   handleInput = event => {
     let name = event.target.name
     let value = event.target.value
+
+    console.log("{}{}{}{}{}{}{}")
+    console.log(name)
+    console.log(value)
 
     if (name === "searchParameter") {
       this.setState({
@@ -26,21 +55,48 @@ class BookView extends Component {
       })
     } else {
       let books = bookViewFilters.getCategory(this.state.allBooks[0], value)
-      this.setState({
-        books,
-        [name]: value,
-        showing: value,
-      })
+      this.setState(
+        {
+          books,
+          [name]: value,
+          showing: value,
+        },
+        () => {
+          this.getSubCategory()
+        }
+      )
     }
 
-    console.log("event key", event.nativeEvent)
-
     if (event.nativeEvent.key === "Enter") {
-      console.log("enter working")
-
       this.handleSubmit(event)
     }
   }
+
+  // handleSubInput = event => {
+  //   let name = event.target.name
+  //   let value = event.target.value
+  //   console.log("{}{}{}{}{}{}{}{}{}")
+  //   console.log(name, value)
+
+  //   if (!this.state.subCat || value === "All") {
+  //     let val = "All"
+  //     console.log(this.state.allBooks[0])
+  //     let arr = this.state.allbooks[0]
+  //     let books = bookViewFilters.getCategory(arr, this.state.category)
+  //     this.setState({
+  //       books,
+  //       [name]: value,
+  //       subCat: val,
+  //     })
+  //   } else {
+  //     let books = bookViewFilters.getCategory(this.state.books, value)
+  //     this.setState({
+  //       books,
+  //       [name]: value,
+  //       subCat: value,
+  //     })
+  //   }
+  // }
 
   handleSubmit = event => {
     event.preventDefault()
@@ -68,6 +124,7 @@ class BookView extends Component {
   //   }
 
   componentDidMount() {
+    this.getSubCategory()
     let books = bookViewFilters.getCategory(
       this.state.allBooks[0],
       this.state.category
@@ -84,8 +141,30 @@ class BookView extends Component {
         <div className={bookViewStyles.header}>
           <div className={bookViewStyles.select}>
             <h3>Filter Books by Category</h3>
-            <select onChange={this.handleInput} className="select-css">
+            <select
+              onChange={this.handleInput}
+              name="category"
+              className="select-css"
+            >
               <option
+                className={bookViewStyles.options}
+                name="category"
+                value="Top Ten"
+              >
+                Top Ten
+              </option>
+              {this.state.allCategories[0].edges.map(index => {
+                return (
+                  <option
+                    className={bookViewStyles.options}
+                    name="category"
+                    value={index.node.category}
+                  >
+                    {index.node.category}
+                  </option>
+                )
+              })}
+              {/* <option
                 className={bookViewStyles.options}
                 name="category"
                 value="Top Ten"
@@ -140,8 +219,27 @@ class BookView extends Component {
                 value="Newbury"
               >
                 Newbury
-              </option>
+              </option> */}
             </select>
+            {/* {this.state.subCategory ? (
+              <div>
+                <select
+                  onChange={this.handleSubInput}
+                  className="select-css"
+                  name="subCat"
+                >
+                  {this.state.subCategory.map(index => {
+                    return (
+                      <option value={index} className={bookViewStyles.options}>
+                        {index}
+                      </option>
+                    )
+                  })}
+                </select>
+              </div>
+            ) : (
+              ""
+            )} */}
           </div>
 
           <div className={bookViewStyles.orCont}>

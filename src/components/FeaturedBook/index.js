@@ -1,11 +1,8 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import {
-  faCalendarAlt,
-  faUser,
-  faShareSquare,
-} from "@fortawesome/free-solid-svg-icons"
+import { faUser, faShareSquare } from "@fortawesome/free-solid-svg-icons"
+import backgroundImage from "../../images/IMG_0496.jpg"
 import featuredStyle from "./featured.module.scss"
 
 const FeaturedBook = () => {
@@ -14,11 +11,6 @@ const FeaturedBook = () => {
       allContentfulFeaturedBook {
         edges {
           node {
-            mainImage {
-              file {
-                url
-              }
-            }
             blogTitle
             author
             slug
@@ -38,9 +30,7 @@ const FeaturedBook = () => {
 
   return (
     <div className={featuredStyle.body}>
-      <img
-        src={data.allContentfulFeaturedBook.edges[0].node.mainImage.file.url}
-      ></img>
+      <img src={backgroundImage}></img>
       <div className={featuredStyle.content}>
         <h1>{data.allContentfulFeaturedBook.edges[0].node.headingMessage}</h1>
         <div className={featuredStyle.headerWrapper}>

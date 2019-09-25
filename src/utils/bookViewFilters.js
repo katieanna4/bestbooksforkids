@@ -2,15 +2,16 @@ import { array } from "prop-types"
 
 const bookViewFilters = {
   getCategory: (bookArr, category) => {
+    console.log("this filter function is running")
+    console.log(bookArr)
     let results = []
 
     bookArr.forEach(index => {
-      console.log(index)
       const book = new Object(index)
       if (typeof book.node.category === "string") {
         book.node.category = book.node.category.split(", ")
       }
-      console.log(book)
+
       if (book.node.category.includes(category)) {
         results.push(book)
       }
@@ -35,7 +36,6 @@ const bookViewFilters = {
   searchBooks: (bookArr, search) => {
     let results = []
 
-    console.log(bookArr)
     bookArr.forEach(index => {
       const book = new Object(index)
 
@@ -61,9 +61,6 @@ const bookViewFilters = {
           lowerCaseTags.push(index.toLowerCase())
         })
       }
-      console.log("{}{}{}{}{}{}{}{}{}{}")
-      console.log(bookViewFilters.searchArrayString(categories, search))
-      console.log(bookViewFilters.searchArrayString(lowerCaseTags, search))
 
       if (categories.includes(search.toLowerCase())) {
         results.push(book)

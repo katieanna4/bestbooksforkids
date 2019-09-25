@@ -10,21 +10,6 @@ import BookView from "../components/BookView"
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulFeaturedBook {
-        edges {
-          node {
-            mainImage {
-              file {
-                url
-              }
-            }
-            blogTitle
-            slug
-            shortDescription
-            headingMessage
-          }
-        }
-      }
       allContentfulBook {
         edges {
           node {
@@ -43,7 +28,9 @@ const IndexPage = () => {
           }
         }
       }
-      allContentfulCategories {
+      allContentfulCategories(
+        sort: { fields: [category, subCategories___subCategories], order: ASC }
+      ) {
         edges {
           node {
             category
