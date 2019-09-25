@@ -15,7 +15,7 @@ class BookView extends Component {
     searchParameter: undefined,
     showing: "Top Ten",
     subCategory: null,
-    subCat: null,
+    subCat: "A-Z",
   }
 
   getSubCategory = () => {
@@ -60,6 +60,8 @@ class BookView extends Component {
           books,
           [name]: value,
           showing: value,
+          subCategory: null,
+          subCategory: null,
         },
         () => {
           this.getSubCategory()
@@ -72,31 +74,37 @@ class BookView extends Component {
     }
   }
 
-  // handleSubInput = event => {
-  //   let name = event.target.name
-  //   let value = event.target.value
-  //   console.log("{}{}{}{}{}{}{}{}{}")
-  //   console.log(name, value)
+  handleSubInput = event => {
+    let name = event.target.name
+    let value = event.target.value
 
-  //   if (!this.state.subCat || value === "All") {
-  //     let val = "All"
-  //     console.log(this.state.allBooks[0])
-  //     let arr = this.state.allbooks[0]
-  //     let books = bookViewFilters.getCategory(arr, this.state.category)
-  //     this.setState({
-  //       books,
-  //       [name]: value,
-  //       subCat: val,
-  //     })
-  //   } else {
-  //     let books = bookViewFilters.getCategory(this.state.books, value)
-  //     this.setState({
-  //       books,
-  //       [name]: value,
-  //       subCat: value,
-  //     })
-  //   }
-  // }
+    if (!this.state.subCat || value === "All") {
+      let val = "All"
+
+      let books = bookViewFilters.getCategory(
+        this.state.allBooks[0],
+        this.state.category
+      )
+      this.setState({
+        books,
+        [name]: value,
+        subCat: val,
+      })
+    } else if (value === "Z-A" || value === "A-Z") {
+      let arr = this.state.books
+      arr.reverse()
+      this.setState({
+        books: arr,
+      })
+    } else {
+      let books = bookViewFilters.getCategory(this.state.books, value)
+      this.setState({
+        books,
+        [name]: value,
+        subCat: value,
+      })
+    }
+  }
 
   handleSubmit = event => {
     event.preventDefault()
@@ -114,6 +122,9 @@ class BookView extends Component {
       this.setState({
         books,
         showing: data,
+        category: "N/A",
+        subCat: null,
+        subCategory: null,
       })
     }
   }
@@ -146,6 +157,18 @@ class BookView extends Component {
               name="category"
               className="select-css"
             >
+              {this.state.category === "N/A" ? (
+                <option
+                  selected
+                  className={bookViewStyles.options}
+                  name="category"
+                  value="N/A"
+                >
+                  N/A
+                </option>
+              ) : (
+                ""
+              )}
               <option
                 className={bookViewStyles.options}
                 name="category"
@@ -221,7 +244,7 @@ class BookView extends Component {
                 Newbury
               </option> */}
             </select>
-            {/* {this.state.subCategory ? (
+            {this.state.subCategory ? (
               <div>
                 <select
                   onChange={this.handleSubInput}
@@ -229,17 +252,32 @@ class BookView extends Component {
                   name="subCat"
                 >
                   {this.state.subCategory.map(index => {
-                    return (
-                      <option value={index} className={bookViewStyles.options}>
-                        {index}
-                      </option>
-                    )
+                    if (index === "All" || index === "A-Z") {
+                      return (
+                        <option
+                          value={index}
+                          className={bookViewStyles.options}
+                          selected
+                        >
+                          {index}
+                        </option>
+                      )
+                    } else {
+                      return (
+                        <option
+                          value={index}
+                          className={bookViewStyles.options}
+                        >
+                          {index}
+                        </option>
+                      )
+                    }
                   })}
                 </select>
               </div>
             ) : (
               ""
-            )} */}
+            )}
           </div>
 
           <div className={bookViewStyles.orCont}>

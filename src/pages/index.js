@@ -10,7 +10,7 @@ import BookView from "../components/BookView"
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulBook {
+      allContentfulBook(sort: { fields: [bookTitle], order: ASC }) {
         edges {
           node {
             bookTitle

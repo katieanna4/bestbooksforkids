@@ -1,6 +1,5 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import logoImage from "../../images/katie-blog-logo3.png"
 import headerStyles from "./header.module.scss"
 
 const Header = props => {
