@@ -10,16 +10,40 @@ import styles from "./blogHeader.module.scss"
 class BlogHeader extends Component {
   state = {
     allPosts: [this.props.blogPosts],
+    allCategories: [this.props.categories],
     posts: [],
     category: "Most Recent",
-    subCategory: "All",
+    subCategory: null,
     searchParameter: undefined,
     showSub: null,
     showing: "Most Recent",
   }
 
+  getSubCategory = () => {
+    let arr = this.state.allCategories[0].edges.map(index => {
+      return index.node.category
+    })
+
+    console.log("{}{}{}{}{}{}")
+    console.log(this.state.category)
+    console.log("==========")
+    if (this.state.category === "Most Recent") {
+      return false
+    } else {
+      let index = arr.indexOf(this.state.category)
+      let subArr = this.state.allCategories[0].edges[
+        index
+      ].node.subCategories.subCategories.split(", ")
+
+      console.log(subArr)
+      this.setState({
+        subCategory: subArr,
+        showSub: subArr[0],
+      })
+    }
+  }
+
   handleInput = event => {
-    console.log(event.target)
     let name = event.target.name
     let value = event.target.value
 
@@ -28,28 +52,37 @@ class BlogHeader extends Component {
         [name]: value,
       })
     } else {
-      console.log("()()()()()()()(")
-      console.log(name)
-      console.log(value)
       if (value === "Most Recent") {
         let posts = this.props.blogPosts
 
-        this.setState({
-          posts,
-          [name]: value,
-          showing: value,
-          showSub: null,
-          subCategory: "All",
-        })
+        this.setState(
+          {
+            posts,
+            [name]: value,
+            showing: value,
+            showSub: null,
+            subCategory: null,
+          },
+          () => {
+            this.getSubCategory()
+          }
+        )
       } else {
         let val = this.state.subCategory
         let posts = postViewFilters.getCategory(this.state.allPosts[0], value)
-        this.setState({
-          posts,
-          [name]: value,
-          showing: value,
-          showSub: val,
-        })
+        console.log("MADE IT BACK TO INDEX")
+        console.log(name, value)
+        this.setState(
+          {
+            posts,
+            [name]: value,
+            showing: value,
+            showSub: val,
+          },
+          () => {
+            this.getSubCategory()
+          }
+        )
       }
     }
 
@@ -144,7 +177,19 @@ class BlogHeader extends Component {
                 >
                   Most Recent
                 </option>
-                <option
+                {this.state.allCategories[0].edges.map(index => {
+                  return (
+                    <option
+                      className={styles.options}
+                      name="category"
+                      value={index.node.category}
+                    >
+                      {index.node.category}
+                    </option>
+                  )
+                })}
+
+                {/* <option
                   className={styles.options}
                   name="category"
                   value="Age 0-3"
@@ -192,74 +237,37 @@ class BlogHeader extends Component {
                   value="Newbury"
                 >
                   Newbury
-                </option>
+                </option> */}
               </select>
 
-              {this.state.showing === "Most Recent" ? (
+              {!this.state.subCategory ? (
                 ""
               ) : (
                 <div className={styles.subCategory}>
                   <select
                     onChange={this.handleSubInput}
                     className="select-css"
-                    name="subCategory"
+                    name="showSub"
                   >
-                    <option
-                      className={styles.options}
-                      name="subCategory"
-                      value="All"
-                    >
-                      All
-                    </option>
-                    <option
-                      className={styles.options}
-                      name="subCategory"
-                      value="Mystery"
-                    >
-                      Mystery
-                    </option>
-                    <option
-                      className={styles.options}
-                      name="subCategory"
-                      value="Fiction"
-                    >
-                      Fiction
-                    </option>
-                    <option
-                      className={styles.options}
-                      name="subCategory"
-                      value="Non-Fiction"
-                    >
-                      Non-Fiction
-                    </option>
-                    <option
-                      className={styles.options}
-                      name="subCategory"
-                      value="Humor"
-                    >
-                      Humor
-                    </option>
-                    <option
-                      className={styles.options}
-                      name="subCategory"
-                      value="History"
-                    >
-                      History
-                    </option>
-                    <option
-                      className={styles.options}
-                      name="subCategory"
-                      value="Science Fiction"
-                    >
-                      Science Fiction
-                    </option>
-                    <option
-                      className={styles.options}
-                      name="subCategory"
-                      value="Poetry"
-                    >
-                      Poetry
-                    </option>
+                    {this.state.subCategory.map(index => {
+                      if (index === "All") {
+                        return (
+                          <option
+                            value={index}
+                            className={styles.options}
+                            selected
+                          >
+                            {index}
+                          </option>
+                        )
+                      } else {
+                        return (
+                          <option value={index} className={styles.options}>
+                            {index}
+                          </option>
+                        )
+                      }
+                    })}
                   </select>
                 </div>
               )}

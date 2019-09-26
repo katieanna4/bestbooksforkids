@@ -61,7 +61,7 @@ class BookView extends Component {
           [name]: value,
           showing: value,
           subCategory: null,
-          subCategory: null,
+          subCat: null,
         },
         () => {
           this.getSubCategory()

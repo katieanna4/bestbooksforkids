@@ -27,6 +27,21 @@ const BlogPage = () => {
           }
         }
       }
+      allContentfulCategories(
+        sort: { fields: [category, subCategories___subCategories], order: ASC }
+      ) {
+        edges {
+          node {
+            category
+            subCategories {
+              subCategories
+            }
+            tags {
+              tags
+            }
+          }
+        }
+      }
     }
   `)
 
@@ -34,7 +49,10 @@ const BlogPage = () => {
     <Layout page="blog" header="Blog">
       <SEO title="Blog" />
       <div className={blogStyles.container}>
-        <BlogHeader blogPosts={data.allContentfulBlogPost.edges} />
+        <BlogHeader
+          blogPosts={data.allContentfulBlogPost.edges}
+          categories={data.allContentfulCategories}
+        />
 
         {/* <ul>
           {data.allContentfulBlogPost.edges.map(index => {
