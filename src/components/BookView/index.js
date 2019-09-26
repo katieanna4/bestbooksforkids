@@ -152,42 +152,43 @@ class BookView extends Component {
         <div className={bookViewStyles.header}>
           <div className={bookViewStyles.select}>
             <h3>Filter Books by Category</h3>
-            <select
-              onChange={this.handleInput}
-              name="category"
-              className="select-css"
-            >
-              {this.state.category === "N/A" ? (
-                <option
-                  selected
-                  className={bookViewStyles.options}
-                  name="category"
-                  value="N/A"
-                >
-                  N/A
-                </option>
-              ) : (
-                ""
-              )}
-              <option
-                className={bookViewStyles.options}
+            <div className={bookViewStyles.selectDropdown}>
+              <select
+                onChange={this.handleInput}
                 name="category"
-                value="Top Ten"
+                className="select-css"
               >
-                Top Ten
-              </option>
-              {this.state.allCategories[0].edges.map(index => {
-                return (
+                {this.state.category === "N/A" ? (
                   <option
+                    selected
                     className={bookViewStyles.options}
                     name="category"
-                    value={index.node.category}
+                    value="N/A"
                   >
-                    {index.node.category}
+                    N/A
                   </option>
-                )
-              })}
-              {/* <option
+                ) : (
+                  ""
+                )}
+                <option
+                  className={bookViewStyles.options}
+                  name="category"
+                  value="Top Ten"
+                >
+                  Top Ten
+                </option>
+                {this.state.allCategories[0].edges.map(index => {
+                  return (
+                    <option
+                      className={bookViewStyles.options}
+                      name="category"
+                      value={index.node.category}
+                    >
+                      {index.node.category}
+                    </option>
+                  )
+                })}
+                {/* <option
                 className={bookViewStyles.options}
                 name="category"
                 value="Top Ten"
@@ -243,41 +244,42 @@ class BookView extends Component {
               >
                 Newbury
               </option> */}
-            </select>
-            {this.state.subCategory ? (
-              <div>
-                <select
-                  onChange={this.handleSubInput}
-                  className="select-css"
-                  name="subCat"
-                >
-                  {this.state.subCategory.map(index => {
-                    if (index === "All" || index === "A-Z") {
-                      return (
-                        <option
-                          value={index}
-                          className={bookViewStyles.options}
-                          selected
-                        >
-                          {index}
-                        </option>
-                      )
-                    } else {
-                      return (
-                        <option
-                          value={index}
-                          className={bookViewStyles.options}
-                        >
-                          {index}
-                        </option>
-                      )
-                    }
-                  })}
-                </select>
-              </div>
-            ) : (
-              ""
-            )}
+              </select>
+              {this.state.subCategory ? (
+                <div>
+                  <select
+                    onChange={this.handleSubInput}
+                    className="select-css"
+                    name="subCat"
+                  >
+                    {this.state.subCategory.map(index => {
+                      if (index === "All" || index === "A-Z") {
+                        return (
+                          <option
+                            value={index}
+                            className={bookViewStyles.options}
+                            selected
+                          >
+                            {index}
+                          </option>
+                        )
+                      } else {
+                        return (
+                          <option
+                            value={index}
+                            className={bookViewStyles.options}
+                          >
+                            {index}
+                          </option>
+                        )
+                      }
+                    })}
+                  </select>
+                </div>
+              ) : (
+                ""
+              )}
+            </div>
           </div>
 
           <div className={bookViewStyles.orCont}>

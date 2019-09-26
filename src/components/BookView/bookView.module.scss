@@ -50,11 +50,12 @@ $primaryFont: Trebuchet MS, sans-serif;
   select {
     background-color: $secondaryColor;
     position: relative;
-    width: 300px;
+    width: 200px;
     height: 45px;
     color: white;
     font-family: $secondaryFont;
     font-size: 18px;
+    margin: 0 0.5rem;
   }
 
   .option {
@@ -76,6 +77,11 @@ $primaryFont: Trebuchet MS, sans-serif;
     box-shadow: 0 10px 6px -6px black;
     transform: scale(1.05);
   }
+}
+
+.selectDropdown {
+  display: flex;
+  justify-content: center;
 }
 
 .results {
