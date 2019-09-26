@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { Link, graphql } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faSearch } from "@fortawesome/free-solid-svg-icons"
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 import BlogPost from "../BlogPost"
 import postViewFilters from "../../utils/postViewFilters"
 
@@ -135,6 +135,8 @@ class BlogHeader extends Component {
       this.setState({
         posts,
         showing: data,
+        subCategory: null,
+        showSub: null,
       })
     }
   }
@@ -299,17 +301,31 @@ class BlogHeader extends Component {
 
             <span style={{ fontWeight: "bold" }}>{this.state.showing}</span>
           </h2>
+          {this.state.posts.length > 0 ? (
+            <p>{this.state.posts.length} posts found</p>
+          ) : (
+            ""
+          )}
         </div>
         <ul
           className={
             this.state.posts.length > 0 ? styles.visiblePosts : styles.noPosts
           }
         >
-          {this.state.posts.length > 0
-            ? this.state.posts.map(index => {
-                return <BlogPost post={index} />
-              })
-            : ""}
+          {this.state.posts.length > 0 ? (
+            this.state.posts.map(index => {
+              return <BlogPost post={index} />
+            })
+          ) : (
+            <div className={styles.noResults}>
+              <h3>Oops. There are no results for your search</h3>
+              <p>
+                Please reach out to me if you there is a specifc genre, topic or
+                category you want me to write about!
+              </p>
+              <FontAwesomeIcon icon={faEnvelope} className={styles.mailIcon} />
+            </div>
+          )}
         </ul>
       </div>
     )
