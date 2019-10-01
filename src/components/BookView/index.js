@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Books from "../Books"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faSearch } from "@fortawesome/free-solid-svg-icons"
+import { faSearch, faArrowCircleDown } from "@fortawesome/free-solid-svg-icons"
 import bookViewStyles from "./bookView.module.scss"
 import bookViewFilters from "../../utils/bookViewFilters"
 
@@ -72,6 +72,11 @@ class BookView extends Component {
     if (event.nativeEvent.key === "Enter") {
       this.handleSubmit(event)
     }
+  }
+
+  scrollToContact = () => {
+    let el = document.getElementById("contact-submit")
+    el.scrollIntoView({ behavior: "smooth" })
   }
 
   handleSubInput = event => {
@@ -317,11 +322,24 @@ class BookView extends Component {
               : bookViewStyles.noBooks
           }
         >
-          {this.state.books.length > 0
-            ? this.state.books.map(index => {
-                return <Books book={index} />
-              })
-            : ""}
+          {this.state.books.length > 0 ? (
+            this.state.books.map(index => {
+              return <Books book={index} />
+            })
+          ) : (
+            <div className={bookViewStyles.noResults}>
+              <h3>Oops. There are no results for your search</h3>
+              <p>
+                Reach out to me below if their is a specific book, author, or
+                genre you'd like to see in my library!
+              </p>
+              <FontAwesomeIcon
+                icon={faArrowCircleDown}
+                className={bookViewStyles.icons}
+                onClick={this.scrollToContact}
+              />
+            </div>
+          )}
         </ul>
       </div>
     )

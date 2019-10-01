@@ -10,7 +10,6 @@ import {
 } from "@fortawesome/free-brands-svg-icons"
 
 import styles from "./about.module.scss"
-
 import SEO from "../components/seo"
 
 const AboutPage = () => {

@@ -59,7 +59,7 @@ class Contact extends Component {
   render() {
     return (
       <div className={contactStyles.container}>
-        <div className={contactStyles.card}>
+        <div id="contact-submit" className={contactStyles.card}>
           <div className={contactStyles.header}>
             <h1>Contact</h1>
             {/* <p>I would love to hear from you!</p> */}

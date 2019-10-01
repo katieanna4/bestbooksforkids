@@ -17,6 +17,7 @@ class BlogHeader extends Component {
     searchParameter: undefined,
     showSub: null,
     showing: "Most Recent",
+    searchMade: false,
   }
 
   getSubCategory = () => {
@@ -62,6 +63,7 @@ class BlogHeader extends Component {
             showing: value,
             showSub: null,
             subCategory: null,
+            searchMade: false,
           },
           () => {
             this.getSubCategory()
@@ -78,6 +80,7 @@ class BlogHeader extends Component {
             [name]: value,
             showing: value,
             showSub: val,
+            searchMade: false,
           },
           () => {
             this.getSubCategory()
@@ -137,6 +140,7 @@ class BlogHeader extends Component {
         showing: data,
         subCategory: null,
         showSub: null,
+        searchMade: true,
       })
     }
   }
@@ -172,6 +176,19 @@ class BlogHeader extends Component {
                 className="select-css"
                 name="category"
               >
+                {this.state.searchMade ? (
+                  <option
+                    className={styles.options}
+                    name="category"
+                    value="N/A"
+                    selected
+                  >
+                    N/A
+                  </option>
+                ) : (
+                  ""
+                )}
+
                 <option
                   className={styles.options}
                   name="category"
@@ -321,7 +338,7 @@ class BlogHeader extends Component {
               <h3>Oops. There are no results for your search</h3>
               <p>
                 Please reach out to me if you there is a specifc genre, topic or
-                category you want me to write about!
+                category you want to see me write about!
               </p>
               <FontAwesomeIcon icon={faEnvelope} className={styles.mailIcon} />
             </div>

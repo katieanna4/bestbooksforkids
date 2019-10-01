@@ -14,10 +14,11 @@ $primaryFont: Trebuchet MS, sans-serif;
   background-color: $darkText;
   padding: 2rem;
   margin-bottom: 0;
+  min-height: 1200px;
 }
 
 .noBooks {
-  height: 500px;
+  height: 1200px;
   background-color: $darkText;
   padding: 1rem;
   margin: 0;
@@ -144,6 +145,33 @@ $primaryFont: Trebuchet MS, sans-serif;
     font-size: 28px;
     font-family: $secondaryFont;
   }
+}
+
+.noResults {
+  margin: 2rem;
+  text-align: center;
+  color: white;
+
+  h3 {
+    font-family: $primaryFont;
+    font-size: 44px;
+    margin-top: 5rem;
+  }
+
+  p {
+    margin-top: 5rem;
+    font-family: $secondaryFont;
+    font-size: 28px;
+  }
+}
+
+.icons {
+  margin-top: 5rem;
+  font-size: 60px;
+}
+
+.icons:hover {
+  cursor: pointer;
 }
 
 .select-css {

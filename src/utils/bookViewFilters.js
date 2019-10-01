@@ -75,10 +75,6 @@ const bookViewFilters = {
       } else if (lowerCaseTags.includes(search.toLowerCase())) {
         console.log("match found")
         results.push(book)
-      } else if (bookViewFilters.searchArrayString(categories, search)) {
-        results.push(book)
-      } else if (bookViewFilters.searchArrayString(lowerCaseTags, search)) {
-        results.push(book)
       }
     })
 
