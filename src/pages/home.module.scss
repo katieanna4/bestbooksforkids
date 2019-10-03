@@ -59,10 +59,11 @@ body {
 
 @media only screen and (max-width: 480px) {
   .header {
-    margin: 0.5rem;
-    font-size: 18px;
+    margin: 1rem auto;
+    font-size: 12px;
     text-align: center;
     p {
+      margin: 2rem auto;
       font-size: 16px;
     }
   }

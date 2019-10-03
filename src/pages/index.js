@@ -51,8 +51,8 @@ const IndexPage = () => {
       <SEO title="Home" />
       <div className={homeStyles.header}>
         <div>
-          <h1>Find the perfect book for your child</h1>
-          <p>Search through my recommended books</p>
+          <h1>Help your child love reading</h1>
+          <p>Explore my Library</p>
         </div>
       </div>
       <BookView

@@ -192,6 +192,7 @@ $primaryFont: Trebuchet MS, sans-serif;
   }
 
   .results {
+    margin: 2.25rem auto;
     h2 {
       font-size: 24px;
     }
@@ -202,10 +203,15 @@ $primaryFont: Trebuchet MS, sans-serif;
     width: 100%;
     text-align: center;
 
+    h3 {
+      font-size: 14px;
+      margin: 1rem;
+    }
+
     select {
       background-color: $secondaryColor;
       position: relative;
-      width: 125px;
+      width: 150px;
       height: 35px;
       color: white;
       font-family: $secondaryFont;
@@ -218,6 +224,14 @@ $primaryFont: Trebuchet MS, sans-serif;
     margin: 1.75rem auto;
     width: 100%;
     text-align: center;
+    h3 {
+      font-size: 14px;
+      margin: 1rem;
+    }
+  }
+
+  .searchBar {
+    width: 330px;
   }
 
   .orCont {
