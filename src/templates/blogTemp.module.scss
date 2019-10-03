@@ -134,3 +134,48 @@ $primaryFont: Trebuchet MS, sans-serif;
     font-family: $secondaryFont;
   }
 }
+
+@media only screen and (max-width: 480px) {
+  * {
+    margin: 0;
+  }
+
+  .container {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .post {
+    width: 100%;
+    margin: 0.5rem auto;
+    .mainImage {
+      width: 100%;
+      height: 450px;
+    }
+  }
+
+  .author {
+    margin: 1.5rem;
+  }
+
+  .blogBody {
+    p {
+      margin: 2rem auto;
+    }
+  }
+
+  .relatedHeader {
+    margin-top: 5.5rem;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .relatedBooks {
+    width: 100%;
+    ul {
+      width: 90%;
+    }
+  }
+}

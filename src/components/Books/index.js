@@ -4,6 +4,9 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import bookStyles from "./books.module.scss"
 
 const Book = props => {
+  // might need to turn this into a hook to manage whether the book image is being hovered over and dynamically add in the buttons
+  // so they don't get clicked when they arent showing on mobile
+
   return (
     <div className={bookStyles.book}>
       <div className={bookStyles.bookHeader}>
@@ -33,7 +36,7 @@ const Book = props => {
 
         <h3>{props.book.node.bookTitle}</h3>
         <p>
-          ~<span className={bookStyles.author}>{props.book.node.author}</span>~
+          <span className={bookStyles.author}>{props.book.node.author}</span>
         </p>
       </div>
       <div className={bookStyles.bookBody}></div>

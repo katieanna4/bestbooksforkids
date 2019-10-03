@@ -288,7 +288,7 @@ class BookView extends Component {
           </div>
 
           <div className={bookViewStyles.orCont}>
-            <span>~ or ~</span>
+            <span> or </span>
           </div>
 
           <div className={bookViewStyles.searchContainer}>
@@ -301,18 +301,18 @@ class BookView extends Component {
               onKeyUp={this.handleInput}
               placeholder="Search.."
             ></input>
-            <button
+            {/* <button
               className={bookViewStyles.searchBtn}
               onClick={this.handleSubmit}
             >
               <FontAwesomeIcon icon={faSearch} />{" "}
-            </button>
+            </button> */}
           </div>
         </div>
         <div className={bookViewStyles.results}>
           <h2>
             Results for{" "}
-            <span style={{ fontWeight: "bold" }}>{this.state.showing}</span>
+            <span style={{ fontWeight: "bold" }}>"{this.state.showing}"</span>
           </h2>
         </div>
         <ul
@@ -330,7 +330,7 @@ class BookView extends Component {
             <div className={bookViewStyles.noResults}>
               <h3>Oops. There are no results for your search</h3>
               <p>
-                Reach out to me below if their is a specific book, author, or
+                Reach out to me below if there is a specific book, author, or
                 genre you'd like to see in my library!
               </p>
               <FontAwesomeIcon

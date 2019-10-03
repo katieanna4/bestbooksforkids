@@ -9,6 +9,26 @@ $primaryFont: Trebuchet MS, sans-serif;
   box-sizing: border-box;
 }
 
+@keyframes buttonAnimation {
+  0% {
+    display: none;
+  }
+
+  100% {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 1rem;
+    background-color: $secondaryColor;
+    height: 45px;
+    width: 110px;
+    border-radius: 8%;
+    border: solid 3px $secondaryColor;
+    color: white;
+    font-family: $secondaryFont;
+  }
+}
+
 .book {
   height: 475px;
   width: 400px;
@@ -63,11 +83,15 @@ $primaryFont: Trebuchet MS, sans-serif;
   .imageMiddle {
     display: block;
     opacity: 1;
+
+    button {
+      display: inline-block;
+    }
   }
 }
 
 .imageMiddle {
-  transition: 0.5s ease;
+  transition: 1s ease;
   display: none;
   opacity: 0;
   position: absolute;
@@ -79,6 +103,7 @@ $primaryFont: Trebuchet MS, sans-serif;
   margin-top: -10rem;
 
   button {
+    display: none;
     font-size: 14px;
     font-weight: 600;
     margin: 1rem;
@@ -112,7 +137,7 @@ $primaryFont: Trebuchet MS, sans-serif;
 
 .author {
   margin: 0 0.25rem;
-  font-family: Apple Chancery, cursive;
+  font-family: $secondaryFont;
 }
 
 @media only screen and (max-width: 480px) {
