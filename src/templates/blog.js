@@ -171,7 +171,7 @@ class BlogPost extends Component {
         <div className={blogStyles.post}>
           <div className={blogStyles.content}>
             <div className={blogStyles.backButton}>
-              {this.props.location.state.comingFrom ? (
+              {this.props.location.state ? (
                 <>
                   {this.props.location.state.comingFrom === "blog" ? (
                     <Link to="/blog">
