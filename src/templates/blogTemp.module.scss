@@ -169,13 +169,16 @@ $primaryFont: Trebuchet MS, sans-serif;
   }
 
   .content {
-    width: 100%;
+    width: 95%;
+    margin: auto;
   }
 
   .relatedBooks {
-    width: 100%;
+    width: 90%;
+    margin: auto;
     ul {
       width: 90%;
+      margin: 1.75rem auto;
     }
   }
 }
