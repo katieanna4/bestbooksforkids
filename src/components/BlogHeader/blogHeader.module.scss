@@ -185,18 +185,18 @@ $primaryFont: Trebuchet MS, sans-serif;
 }
 
 .searchBar {
-  padding-left: 0.5rem;
+  padding-left: 0.75rem;
   font-size: 18px;
   font-family: $secondaryFont;
   height: 45px;
   width: 100%;
-  border-radius: 6%;
+  border-radius: 100px;
   background-color: whitesmoke;
 }
 
 .searchBar:focus {
   outline: none;
-  border: solid 4px #add8e6;
+  border: solid 4px $secondaryColor;
 
   box-shadow: 0 10px 6px -6px black;
   transform: scale(1.01);
@@ -251,6 +251,25 @@ $primaryFont: Trebuchet MS, sans-serif;
 }
 
 @media only screen and (max-width: 480px) {
+  .blogHeader {
+    div {
+      margin: 2rem 0 6rem 0;
+      h1 {
+        font-size: 24px;
+        margin-bottom: 2rem;
+      }
+      p {
+        font-size: 14px;
+        line-height: 1.75rem;
+        margin: 1rem;
+      }
+    }
+  }
+
+  .visiblePosts {
+    margin: 0;
+  }
+
   .header {
     display: block;
   }
@@ -260,10 +279,14 @@ $primaryFont: Trebuchet MS, sans-serif;
     width: 100%;
     text-align: center;
 
+    h3 {
+      font-size: 16px;
+    }
+
     select {
       background-color: $secondaryColor;
       position: relative;
-      width: 125px;
+      width: 150px;
       height: 35px;
       color: white;
       font-family: $secondaryFont;
@@ -272,10 +295,46 @@ $primaryFont: Trebuchet MS, sans-serif;
     }
   }
 
+  .selectContainer {
+    justify-content: center;
+    margin: 1.25rem 0;
+  }
+
+  .results {
+    margin: 6rem auto 0 auto;
+
+    h2 {
+      font-size: 22px;
+      margin: 1rem;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+
   .searchContainer {
     margin: 1.75rem auto;
     width: 100%;
     text-align: center;
+    h3 {
+      font-size: 16px;
+      margin: 1.25rem;
+    }
+  }
+
+  .noResults {
+    p {
+      font-size: 18px;
+    }
+  }
+
+  .noPosts {
+    height: 500px;
+  }
+
+  .searchBar {
+    width: 350px;
   }
 
   .orCont {
@@ -292,5 +351,6 @@ $primaryFont: Trebuchet MS, sans-serif;
     width: 100%;
     display: flex;
     justify-content: center;
+    margin: 0;
   }
 }

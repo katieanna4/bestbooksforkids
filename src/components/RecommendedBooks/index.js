@@ -24,7 +24,7 @@ const RecommendedBooks = props => {
 
         <h3>{props.book.node.bookTitle}</h3>
         <p>
-          ~<span className={styles.author}>{props.book.node.author}</span>~
+          <span className={styles.author}>{props.book.node.author}</span>
         </p>
       </div>
       <div className={styles.bookBody}></div>

@@ -30,6 +30,16 @@ $primaryFont: Trebuchet MS, sans-serif;
 
 .book:hover {
   transform: scale(1.01);
+
+  .imageContainer {
+    img {
+      opacity: 0.2;
+    }
+
+    .imageMiddle {
+      opacity: 1;
+    }
+  }
 }
 
 .bookBody {
@@ -52,16 +62,6 @@ $primaryFont: Trebuchet MS, sans-serif;
     width: 100%;
     transition: 0.5s ease;
     backface-visibility: hidden;
-  }
-}
-
-.imageContainer:hover {
-  img {
-    opacity: 0.2;
-  }
-
-  .imageMiddle {
-    opacity: 1;
   }
 }
 
@@ -112,7 +112,7 @@ $primaryFont: Trebuchet MS, sans-serif;
 .author {
   margin: 0 0.25rem;
   font-size: 14px;
-  font-family: Apple Chancery, cursive;
+  font-family: $secondaryFont;
 }
 
 @media only screen and (max-width: 480px) {

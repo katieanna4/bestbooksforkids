@@ -293,7 +293,7 @@ class BlogHeader extends Component {
             </div>
           </div>
           <div className={styles.orCont}>
-            <span>~ or ~</span>
+            <span>or</span>
           </div>
 
           <div className={styles.searchContainer}>

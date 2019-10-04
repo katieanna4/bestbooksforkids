@@ -102,3 +102,56 @@ $primaryFont: Trebuchet MS, sans-serif;
 .link {
   text-decoration: none;
 }
+
+@media only screen and (max-width: 480px) {
+  .card {
+    width: 100%;
+    margin: 2rem 0;
+    height: 550px;
+    div {
+      height: auto;
+    }
+  }
+
+  .mainImage {
+    height: 350px;
+  }
+
+  .header {
+    h3 {
+      font-size: 18px;
+      font-family: $primaryFont;
+    }
+  }
+
+  .subHeader {
+    p {
+      font-size: 12px;
+      font-family: $secondaryFont;
+      margin: 0;
+    }
+  }
+
+  .icon {
+    font-size: 14px;
+    margin: 0 0.25rem 0 0;
+  }
+
+  .body {
+    margin: 1rem;
+    height: 65px !important;
+    overflow: scroll;
+    p {
+      font-size: 12px;
+      line-height: 1rem;
+    }
+  }
+
+  .footer {
+    margin: 1rem 0 0 0;
+
+    p {
+      font-size: 12px;
+    }
+  }
+}

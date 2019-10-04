@@ -50,6 +50,21 @@ $primaryFont: Trebuchet MS, sans-serif;
 
 .book:hover {
   transform: scale(1.01);
+
+  .imageContainer {
+    img {
+      opacity: 0.2;
+    }
+
+    .imageMiddle {
+      display: block;
+      opacity: 1;
+
+      button {
+        display: inline-block;
+      }
+    }
+  }
 }
 
 .bookBody {
@@ -72,21 +87,6 @@ $primaryFont: Trebuchet MS, sans-serif;
     width: 100%;
     transition: 0.5s ease;
     backface-visibility: hidden;
-  }
-}
-
-.imageContainer:hover {
-  img {
-    opacity: 0.2;
-  }
-
-  .imageMiddle {
-    display: block;
-    opacity: 1;
-
-    button {
-      display: inline-block;
-    }
   }
 }
 
