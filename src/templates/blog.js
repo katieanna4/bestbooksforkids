@@ -64,6 +64,7 @@ class BlogPost extends Component {
     post: this.props.data.contentfulBlogPost,
     books: this.props.data.allContentfulBook,
     visibleBooks: [],
+    mobileBooks: [],
     currentIndex: 0,
     pastIndex: 0,
   }
@@ -82,6 +83,7 @@ class BlogPost extends Component {
     //   })
     // }
     this.getBooks()
+    this.getMoblie()
   }
 
   getBooks = () => {
@@ -117,6 +119,39 @@ class BlogPost extends Component {
     }
   }
 
+  getMoblie = () => {
+    if (this.state.books.edges.length > 2) {
+      let arr = []
+      for (
+        let i = this.state.currentIndex;
+        i < [this.state.currentIndex + 2];
+        i++
+      ) {
+        if (i < 0) {
+          let num = this.state.books.edges.length - 1
+          arr.push(this.state.books.edges[num])
+        } else if (i > this.state.books.edges.length - 1) {
+          arr.push(this.state.books.edges[i - this.state.books.edges.length])
+        } else {
+          arr.push(this.state.books.edges[i])
+        }
+      }
+
+      this.setState({
+        mobileBooks: arr,
+      })
+    } else if (this.state.books.edges.length > 0) {
+      let books = this.state.books.edges
+      this.setState({
+        mobileBooks: books,
+      })
+    } else {
+      this.setState({
+        mobileBooks: false,
+      })
+    }
+  }
+
   next = () => {
     let sub
 
@@ -142,6 +177,31 @@ class BlogPost extends Component {
     )
   }
 
+  mobileNext = () => {
+    let sub
+
+    let max = this.state.mobileBooks.length + 1
+
+    if (this.state.currentIndex < 0) {
+      sub = this.state.mobileBooks.length - 1
+    } else {
+      sub = this.state.currentIndex + 1
+    }
+
+    if (sub > max) {
+      sub = 0
+    }
+
+    this.setState(
+      {
+        currentIndex: sub,
+      },
+      () => {
+        this.getMoblie()
+      }
+    )
+  }
+
   prev = () => {
     let add
     let max = this.state.visibleBooks.length
@@ -161,6 +221,29 @@ class BlogPost extends Component {
       },
       () => {
         this.getBooks()
+      }
+    )
+  }
+
+  mobilePrev = () => {
+    let add
+    let max = this.state.mobileBooks.length
+    if (this.state.currentIndex < 0) {
+      add = this.state.mobileBooks.length
+    } else {
+      add = this.state.currentIndex - 1
+    }
+
+    if (add > max) {
+      add = 0
+    }
+
+    this.setState(
+      {
+        currentIndex: add,
+      },
+      () => {
+        this.getMoblie()
       }
     )
   }
@@ -241,6 +324,31 @@ class BlogPost extends Component {
                 <FontAwesomeIcon
                   onClick={this.next}
                   className={blogStyles.arrow}
+                  icon={faAngleRight}
+                />
+              ) : (
+                ""
+              )}
+            </div>
+            <div className={blogStyles.mobileRelatedBooks}>
+              {this.state.books.edges.length > 2 ? (
+                <FontAwesomeIcon
+                  onClick={this.mobilePrev}
+                  className={blogStyles.mobileArrowLeft}
+                  icon={faAngleLeft}
+                />
+              ) : (
+                ""
+              )}
+              <ul>
+                {this.state.mobileBooks.map(index => {
+                  return <RecommendedBooks book={index} />
+                })}
+              </ul>
+              {this.state.books.edges.length > 2 ? (
+                <FontAwesomeIcon
+                  onClick={this.mobileNext}
+                  className={blogStyles.mobileArrowRight}
                   icon={faAngleRight}
                 />
               ) : (

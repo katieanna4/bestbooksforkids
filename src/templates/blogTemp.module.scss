@@ -92,6 +92,10 @@ $primaryFont: Trebuchet MS, sans-serif;
   font-family: $secondaryFont;
 }
 
+.mobileRelatedBooks {
+  display: none;
+}
+
 .relatedBooks {
   display: flex;
   justify-content: center;
@@ -189,11 +193,33 @@ $primaryFont: Trebuchet MS, sans-serif;
   }
 
   .relatedBooks {
+    display: none;
+  }
+
+  .mobileRelatedBooks {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     width: 90%;
-    margin: auto;
+    margin: 0;
     ul {
       width: 90%;
       margin: 1.75rem auto;
+      display: flex;
+      justify-content: center;
+    }
+
+    .mobileArrowLeft {
+      font-size: 30px;
+      margin: 0 0.25rem;
+      position: absolute;
+      left: 1%;
+    }
+    .mobileArrowRight {
+      font-size: 30px;
+      margin: 0 0.25rem;
+      position: absolute;
+      right: 1%;
     }
   }
 }
