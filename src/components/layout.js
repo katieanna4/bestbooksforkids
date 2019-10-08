@@ -40,7 +40,7 @@ const Layout = props => {
               <Header header={props.header} />
 
               <main>{props.children}</main>
-
+              <Contact />
               <Footer />
             </div>
           </div>

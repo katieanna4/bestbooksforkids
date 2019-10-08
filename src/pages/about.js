@@ -3,92 +3,55 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import katieImage from "../images/jackson-hayes-L4qZZPJ_lAo-unsplash.jpg"
 import Layout from "../components/layout"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import {
-  faInstagram,
-  faTwitter,
-  faPinterest,
-} from "@fortawesome/free-brands-svg-icons"
+import { faInstagram } from "@fortawesome/free-brands-svg-icons"
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 
 import styles from "./about.module.scss"
 import SEO from "../components/seo"
 
 const AboutPage = () => {
-  return (
-    <Layout header="About">
-      <SEO title="About" />
-      <div className={styles.header}>
-        <h1>Meet The Team</h1>
-      </div>
+  const scrollToContact = () => {
+    let el = document.getElementById("contact-submit")
+    el.scrollIntoView({ behavior: "smooth" })
+  }
 
-      <div className={styles.firstAuthor}>
-        <div className={styles.bioPhoto}>
-          <img src={katieImage}></img>
-          <p>
-            Jane Doe writes SEO articles for businesses that want to see their
-            Google search rankings surge.(What she does.) Her articles have
-            appeared in a number of e-zine sites, including EzineArticles.com,
-            ArticlesBase.com, HubPages.com and TRCB.com. She contributes
-            articles about SEO techniques regularly to Site-Reference
-            Newletter.com. Her articles focus on balancing informative with SEO
-            needs–but never at the expense of providing an entertaining read.
-            Learn more about how Jane’s SEO articles could grow your business by
-            visiting her blog at JaneDoeSEOArticlesBlog.com
-          </p>
-        </div>
-        <div className={styles.bioGeneral}>
-          <p>Katie Lewis</p>
-          <div className={styles.socialMedia}>
-            <FontAwesomeIcon className={styles.icon} icon={faInstagram} />
-            <FontAwesomeIcon className={styles.icon} icon={faTwitter} />
-            <FontAwesomeIcon className={styles.icon} icon={faPinterest} />
+  return (
+    <Layout header="About" page="about">
+      <div className={styles.container}>
+        <div>
+          <div className={styles.imgContainer}>
+            <img src={katieImage}></img>
           </div>
-        </div>
-      </div>
-      <div className={styles.secondAuthor}>
-        <div className={styles.bioPhoto}>
-          <img src={katieImage}></img>
-          <p>
-            Jane Doe writes SEO articles for businesses that want to see their
-            Google search rankings surge.(What she does.) Her articles have
-            appeared in a number of e-zine sites, including EzineArticles.com,
-            ArticlesBase.com, HubPages.com and TRCB.com. She contributes
-            articles about SEO techniques regularly to Site-Reference
-            Newletter.com. Her articles focus on balancing informative with SEO
-            needs–but never at the expense of providing an entertaining read.
-            Learn more about how Jane’s SEO articles could grow your business by
-            visiting her blog at JaneDoeSEOArticlesBlog.com
-          </p>
-        </div>
-        <div className={styles.bioGeneral}>
-          <p>Anna Lewis</p>
-          <div className={styles.socialMedia}>
-            <FontAwesomeIcon className={styles.icon} icon={faInstagram} />
-            <FontAwesomeIcon className={styles.icon} icon={faTwitter} />
-            <FontAwesomeIcon className={styles.icon} icon={faPinterest} />
-          </div>
-        </div>
-      </div>
-      <div className={styles.thirdAuthor}>
-        <div className={styles.bioPhoto}>
-          <img src={katieImage}></img>
-          <p>
-            Jane Doe writes SEO articles for businesses that want to see their
-            Google search rankings surge.(What she does.) Her articles have
-            appeared in a number of e-zine sites, including EzineArticles.com,
-            ArticlesBase.com, HubPages.com and TRCB.com. She contributes
-            articles about SEO techniques regularly to Site-Reference
-            Newletter.com. Her articles focus on balancing informative with SEO
-            needs–but never at the expense of providing an entertaining read.
-            Learn more about how Jane’s SEO articles could grow your business by
-            visiting her blog at JaneDoeSEOArticlesBlog.com
-          </p>
-        </div>
-        <div className={styles.bioGeneral}>
-          <p>Karen Davis</p>
-          <div className={styles.socialMedia}>
-            <FontAwesomeIcon className={styles.icon} icon={faInstagram} />
-            <FontAwesomeIcon className={styles.icon} icon={faTwitter} />
-            <FontAwesomeIcon className={styles.icon} icon={faPinterest} />
+          <div className={styles.bio}>
+            <h3>About Katie</h3>
+            <div className={styles.contact}>
+              <FontAwesomeIcon className={styles.icons} icon={faInstagram} />
+              <FontAwesomeIcon
+                onClick={scrollToContact}
+                className={styles.icons}
+                icon={faEnvelope}
+              />
+            </div>
+            <p>
+              Paul flashed the charm in full during his session, detailing
+              expectations for the season, sharing how excited he was in a fresh
+              start, while also playing up the nostalgia element.
+            </p>
+            <p>
+              Inside the locker room, Westbrook's spot is now shared by training
+              camp invitees and will likely be empty on opening night. Once upon
+              a time, James Harden was at the locker to the right of
+              Westbrook's, and Kevin Durant to the right of Harden's. Harden was
+              traded, Durant left, and for the past few years, the lockers next
+              to Westbrook's stayed empty.
+            </p>
+            <p>
+              The Thunder have orbited in Westbrook's universe the past few
+              years, and his gravity was felt in every room of every building he
+              occupied. For some, it was exhausting to deal with on a day-in,
+              day-out basis. Every decision, every policy, whether minor or
+              major, flowed through Westbrook.
+            </p>
           </div>
         </div>
       </div>

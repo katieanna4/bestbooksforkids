@@ -31,7 +31,7 @@ const Header = props => {
               }
               to="/"
             >
-              Home
+              <span className={headerStyles.navLink}>Home</span>
             </Link>
           </li>
           <li>
@@ -43,7 +43,7 @@ const Header = props => {
               }
               to="/about"
             >
-              About
+              <span className={headerStyles.navLink}> About</span>
             </Link>
           </li>
           <li>
@@ -55,7 +55,7 @@ const Header = props => {
               }
               to="/blog"
             >
-              Blog
+              <span className={headerStyles.navLink}> Blog</span>
             </Link>
           </li>
         </ul>

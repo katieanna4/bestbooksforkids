@@ -7,73 +7,48 @@ $backgroundColor: #a6a9a9;
 $secondaryFont: Optima, sans-serif;
 $primaryFont: Trebuchet MS, sans-serif;
 
-.header {
+.container {
+  margin-top: 2rem;
+  width: 100%;
   display: flex;
   justify-content: center;
-  margin: 3rem auto;
+  font-family: $secondaryFont;
+}
 
-  h1 {
-    font-size: 40px;
+.imgContainer {
+  img {
+    width: 1000px;
+    height: 800px;
+    box-shadow: -6px 10px 6px -6px black;
+  }
+}
+
+.bio {
+  width: 1000px;
+
+  h3 {
+    margin: 2rem auto;
+    font-size: 3rem;
     font-family: $primaryFont;
   }
-}
-
-.firstAuthor {
-  display: flex;
-  justify-content: flex-start;
-  margin: 2.5rem auto;
-  align-items: center;
-  width: 100%;
-}
-
-.secondAuthor {
-  display: flex;
-  justify-content: center;
-  margin: 2.5rem auto;
-  align-items: center;
-  width: 100%;
-}
-
-.thirdAuthor {
-  display: flex;
-  justify-content: flex-end;
-  margin: 2.5rem auto;
-  align-items: center;
-  width: 100%;
-}
-
-.bioPhoto {
-  text-align: center;
-  width: 500px;
-  margin: 2.5rem;
-  img {
-    margin: 1.5rem 0;
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-  }
 
   p {
-    font-family: $secondaryFont;
-    line-height: 2.5rem;
-    font-size: 18px;
+    margin: 3.5rem 1.5rem;
+    font-size: 2rem;
+    line-height: 2.75rem;
   }
 }
 
-.bioGeneral {
-  margin: 1.5rem;
-  p {
-    font-size: 26px;
-    font-family: $secondaryFont;
-  }
-}
-
-.socialMedia {
+.contact {
   display: flex;
   justify-content: center;
 }
 
-.icon {
-  font-size: 26px;
-  margin: 0.5rem;
+.icons {
+  font-size: 4rem;
+  margin: 0 2rem;
+}
+
+.icons:hover {
+  cursor: pointer;
 }
