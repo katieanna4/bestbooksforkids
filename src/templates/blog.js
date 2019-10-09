@@ -287,10 +287,13 @@ class BlogPost extends Component {
               )}
             </div>
             <h1>{this.state.post.title}</h1>
-            <p className={blogStyles.author}>
-              <FontAwesomeIcon className={blogStyles.icons} icon={faUser} />{" "}
-              Katie Lewis
-            </p>
+            <Link className={blogStyles.links} to="/about">
+              {" "}
+              <p className={blogStyles.author}>
+                <FontAwesomeIcon className={blogStyles.icons} icon={faUser} />{" "}
+                Katie Lewis
+              </p>
+            </Link>
             <img
               className={blogStyles.mainImage}
               src={this.state.post.mainImage.file.url}

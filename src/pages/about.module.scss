@@ -52,3 +52,65 @@ $primaryFont: Trebuchet MS, sans-serif;
 .icons:hover {
   cursor: pointer;
 }
+
+@media only screen and (max-width: 768px) {
+  .imgContainer {
+    img {
+      width: 700px;
+      height: 500px;
+      box-shadow: -6px 10px 6px -6px black;
+    }
+  }
+
+  .bio {
+    width: 700px;
+
+    h3 {
+      margin: 2rem auto;
+      font-size: 2.25rem;
+      font-family: $primaryFont;
+    }
+
+    p {
+      margin: 3.5rem 1.5rem;
+      font-size: 1.75rem;
+      line-height: 2.5rem;
+    }
+  }
+
+  .icons {
+    font-size: 3rem;
+    margin: 0 2rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .imgContainer {
+    img {
+      width: 350px;
+      height: 225px;
+      box-shadow: -6px 10px 6px -6px black;
+    }
+  }
+
+  .bio {
+    width: 350px;
+
+    h3 {
+      margin: 2rem auto;
+      font-size: 2rem;
+      font-family: $primaryFont;
+    }
+
+    p {
+      margin: 3.5rem 1.5rem;
+      font-size: 1.25rem;
+      line-height: 2.25rem;
+    }
+  }
+
+  .icons {
+    font-size: 3rem;
+    margin: 0 2rem;
+  }
+}

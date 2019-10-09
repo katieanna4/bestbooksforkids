@@ -39,6 +39,11 @@ $primaryFont: Trebuchet MS, sans-serif;
   font-size: 18px;
 }
 
+.links {
+  text-decoration: none;
+  color: $darkText;
+}
+
 .backButton {
   text-align: center;
   margin: 2rem auto;

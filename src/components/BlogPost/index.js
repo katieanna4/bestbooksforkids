@@ -29,11 +29,16 @@ const BlogPost = props => {
             {/* <p>{props.post.node.published}</p>
           <p>{props.post.node.author}</p> */}
 
-            <p>
-              {" "}
-              <FontAwesomeIcon className={blogStyles.icon} icon={faUser} />{" "}
-              Katie Lewis
-            </p>
+            <Link className={blogStyles.link} to="/about">
+              <p>
+                {" "}
+                <FontAwesomeIcon
+                  className={blogStyles.icon}
+                  icon={faUser}
+                />{" "}
+                Katie Lewis
+              </p>
+            </Link>
           </div>
         </div>
         <div className={blogStyles.body}>
