@@ -248,6 +248,58 @@ $primaryFont: Trebuchet MS, sans-serif;
 }
 
 @media only screen and (max-width: 768px) {
+  .blogHeader {
+    div {
+      margin: 2.5rem 0 6rem 0;
+      h1 {
+        font-size: 30px;
+        margin-bottom: 2.5rem;
+      }
+      p {
+        font-size: 18px;
+        line-height: 1.75rem;
+        margin: 1.5rem;
+      }
+    }
+  }
+
+  .header {
+    align-items: center;
+  }
+
+  .select {
+    font-family: $secondaryFont;
+    width: 300px;
+    text-align: center;
+
+    h3 {
+      font-size: 20px;
+    }
+
+    select {
+      background-color: $secondaryColor;
+      position: relative;
+      width: 150px;
+      height: 35px;
+      color: white;
+      font-family: $secondaryFont;
+      font-size: 18px;
+      text-align: center;
+    }
+  }
+
+  .selectContainer {
+    justify-content: center;
+  }
+
+  .searchContainer {
+    margin: 0;
+    width: 300px;
+    text-align: center;
+    h3 {
+      font-size: 20px;
+    }
+  }
 }
 
 @media only screen and (max-width: 480px) {

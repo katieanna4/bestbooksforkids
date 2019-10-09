@@ -152,6 +152,31 @@ $primaryFont: Trebuchet MS, sans-serif;
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .card {
+    width: 500px;
+    height: auto;
+  }
+
+  .body {
+    input {
+      height: 3rem;
+      margin: 1.5rem 2rem;
+      font-size: 14px;
+    }
+
+    textarea {
+      height: 8rem;
+      font-size: 14px;
+      margin: 1.5rem 2rem;
+    }
+  }
+  .footer {
+    margin: 1.5rem auto;
+    width: 325px;
+  }
+}
+
 @media only screen and (max-width: 480px) {
   .card {
     width: 340px;

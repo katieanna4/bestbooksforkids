@@ -184,6 +184,35 @@ $primaryFont: Trebuchet MS, sans-serif;
 }
 
 @media only screen and (max-width: 768px) {
+  .select {
+    width: 300px;
+
+    h3 {
+      font-size: 22px;
+    }
+
+    select {
+      width: 125px;
+    }
+  }
+
+  .selectDropdown {
+    margin: 3rem 0;
+  }
+  .searchContainer {
+    width: 300px;
+
+    h3 {
+      font-size: 22px;
+    }
+  }
+  .searchBar {
+    width: 300px;
+  }
+
+  .visibleBooks {
+    padding: 1rem;
+  }
 }
 
 @media only screen and (max-width: 480px) {

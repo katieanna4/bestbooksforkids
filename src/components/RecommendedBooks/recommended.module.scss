@@ -120,6 +120,43 @@ $primaryFont: Trebuchet MS, sans-serif;
   font-family: $secondaryFont;
 }
 
+@media only screen and (max-width: 768px) {
+  .book {
+    height: 250px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    font-size: 10px;
+    margin: 0.5rem;
+    h3 {
+      margin: 0px;
+      font-size: 14px;
+    }
+  }
+
+  .imageContainer {
+    width: 175px;
+    height: 175px;
+    margin-bottom: 0.25rem;
+  }
+
+  .imageMiddle {
+    position: absolute;
+
+    text-align: center;
+    left: 3%;
+    width: 175px;
+    height: 175px;
+    margin-top: -8rem;
+
+    button {
+      height: 40px;
+      width: 100px;
+      margin: 0.5rem 0;
+    }
+  }
+}
+
 @media only screen and (max-width: 480px) {
   .book {
     height: 200px;
