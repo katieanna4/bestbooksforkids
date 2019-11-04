@@ -3,21 +3,13 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import headerStyles from "./header.module.scss"
 
 const Header = props => {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
     <>
       <div className={headerStyles.jumbotron}>
         <div className={headerStyles.pageInfo}>
-          <h1>{data.site.siteMetadata.title}</h1>
+          <span>Best</span>
+
+          <h4> BOOKS FOR KIDS</h4>
         </div>
       </div>
       <nav className={headerStyles.navBar}>
@@ -31,7 +23,7 @@ const Header = props => {
               }
               to="/"
             >
-              <span className={headerStyles.navLink}>Home</span>
+              <span className={headerStyles.navLink}>HOME</span>
             </Link>
           </li>
           <li>
@@ -43,7 +35,7 @@ const Header = props => {
               }
               to="/about"
             >
-              <span className={headerStyles.navLink}> About</span>
+              <span className={headerStyles.navLink}> ABOUT</span>
             </Link>
           </li>
           <li>
@@ -55,7 +47,7 @@ const Header = props => {
               }
               to="/blog"
             >
-              <span className={headerStyles.navLink}> Blog</span>
+              <span className={headerStyles.navLink}> BLOG</span>
             </Link>
           </li>
         </ul>

@@ -145,6 +145,11 @@ class BlogHeader extends Component {
     }
   }
 
+  scrollToContact = () => {
+    let el = document.getElementById("contact-submit")
+    el.scrollIntoView({ behavior: "smooth" })
+  }
+
   componentDidMount() {
     let posts = this.props.blogPosts
 
@@ -340,7 +345,11 @@ class BlogHeader extends Component {
                 Please reach out to me if you there is a specifc genre, topic or
                 category you want to see me write about!
               </p>
-              <FontAwesomeIcon icon={faEnvelope} className={styles.mailIcon} />
+              <FontAwesomeIcon
+                onClick={this.scrollToContact}
+                icon={faEnvelope}
+                className={styles.mailIcon}
+              />
             </div>
           )}
         </ul>
