@@ -10,6 +10,7 @@ $primaryFont: Trebuchet MS, sans-serif;
 .body {
   width: 100%;
   img {
+    transition: opacity 1s;
     height: 800px;
     width: 100%;
     opacity: 1;
@@ -40,7 +41,7 @@ $primaryFont: Trebuchet MS, sans-serif;
   width: 800px;
   height: auto;
   position: absolute;
-  top: 6%;
+  top: 7%;
   left: 30%;
   text-align: center;
   h1 {
@@ -210,6 +211,13 @@ $primaryFont: Trebuchet MS, sans-serif;
   }
 }
 
+@media only screen and (max-width: 1024px) {
+  .content {
+    top: 4.75%;
+    left: 10%;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .body {
     width: 100%;
@@ -221,7 +229,7 @@ $primaryFont: Trebuchet MS, sans-serif;
 
   .content {
     position: absolute;
-    top: 3%;
+    top: 6%;
     left: 3%;
     width: 700px;
     text-align: center;

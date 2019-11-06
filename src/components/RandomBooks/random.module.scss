@@ -1,0 +1,203 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 400px;
+  margin: 3rem auto;
+}
+$mainColor: #9fd2cb;
+$secondaryColor: #d29b6c;
+$textColor: #f4b9a9;
+$darkText: #263147;
+$backgroundColor: #a6a9a9;
+$secondaryFont: Optima, sans-serif;
+$primaryFont: Trebuchet MS, sans-serif;
+* {
+  box-sizing: border-box;
+}
+
+.book {
+  height: 300px;
+  width: 250px;
+  padding: 0.25rem;
+  background-color: white;
+  border: solid 4px $secondaryColor;
+  border-radius: 3%;
+  text-align: center;
+  box-shadow: -6px 10px 6px -6px black;
+  margin: 1rem;
+  color: $darkText;
+
+  h3 {
+    font-weight: 900;
+    font-size: 18px;
+    font-family: $secondaryFont;
+  }
+}
+
+.book:hover {
+  transform: scale(1.01);
+
+  .imageContainer {
+    img {
+      opacity: 0.2;
+    }
+
+    .imageMiddle {
+      opacity: 1;
+
+      button {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.bookBody {
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.imageContainer {
+  height: 200px;
+  width: 200px;
+  border: solid 4px $secondaryColor;
+  border-radius: 3%;
+  img {
+    opacity: 1;
+    display: block;
+    height: 100%;
+    width: 100%;
+    transition: 0.5s ease;
+    backface-visibility: hidden;
+  }
+}
+
+.imageMiddle {
+  transition: 0.5s ease;
+
+  opacity: 0;
+  position: absolute;
+
+  text-align: center;
+
+  width: 200px;
+  height: 200px;
+  margin-top: -10rem;
+
+  button {
+    display: none;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 1rem;
+    background-color: $secondaryColor;
+    height: 45px;
+    width: 110px;
+    border-radius: 8%;
+    border: solid 3px $secondaryColor;
+    color: white;
+    font-family: $secondaryFont;
+  }
+
+  button:hover {
+    transform: scale(1.01);
+    box-shadow: 0 10px 6px -6px black;
+    cursor: pointer;
+  }
+
+  button:active {
+    outline: none;
+  }
+
+  button:focus {
+    outline: none;
+  }
+}
+
+.blog {
+  display: block;
+}
+
+.author {
+  margin: 0 0.25rem;
+  font-size: 14px;
+  font-family: $secondaryFont;
+}
+
+@media only screen and (max-width: 768px) {
+  .book {
+    height: 250px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    font-size: 10px;
+    margin: 0.5rem;
+    h3 {
+      margin: 0px;
+      font-size: 14px;
+    }
+  }
+
+  .imageContainer {
+    width: 175px;
+    height: 175px;
+    margin-bottom: 0.25rem;
+  }
+
+  .imageMiddle {
+    position: absolute;
+
+    text-align: center;
+    left: 3%;
+    width: 175px;
+    height: 175px;
+    margin-top: -8rem;
+
+    button {
+      height: 40px;
+      width: 100px;
+      margin: 0.5rem 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .book {
+    height: 200px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    font-size: 10px;
+    margin: 0.25rem;
+    h3 {
+      margin: 0px;
+      font-size: 14px;
+    }
+  }
+
+  .imageContainer {
+    width: 125px;
+    height: 125px;
+    margin-bottom: 0.25rem;
+  }
+
+  .imageMiddle {
+    position: absolute;
+
+    text-align: center;
+    left: 3%;
+    width: 125px;
+    height: 125px;
+    margin-top: -7rem;
+
+    button {
+      height: 40px;
+      width: 100px;
+      margin: 0.5rem 0;
+    }
+  }
+}
