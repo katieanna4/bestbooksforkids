@@ -76,9 +76,8 @@ class Contact extends Component {
           </div>
           <div className={contactStyles.body}>
             <form
-              type="hidden"
-              name="form-name"
-              value="contact"
+              name="contact"
+              data-netlify-honeypot="bot-field"
               data-netlify="true"
               netlify
             >
