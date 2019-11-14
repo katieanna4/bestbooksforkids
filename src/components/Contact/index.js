@@ -75,7 +75,7 @@ class Contact extends Component {
             {/* <p>I would love to hear from you!</p> */}
           </div>
           <div className={contactStyles.body}>
-            <form type="hidden" name="form-name" value="contact">
+            <form type="hidden" name="form-name" value="contact" netlify>
               <div className={contactStyles.inputWrapper}>
                 <input
                   onChange={this.handleInput}
