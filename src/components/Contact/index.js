@@ -6,6 +6,12 @@ import ReCaptcha from "../ReCaptcha"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons"
 
+const encode = data => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&")
+}
+
 class Contact extends Component {
   state = {
     name: null,
@@ -46,9 +52,13 @@ class Contact extends Component {
         emailValid: false,
       })
     } else {
-      this.setState({
-        emailValid: true,
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact", ...this.state }),
       })
+        .then(() => alert("Success!"))
+        .catch(error => alert(error))
     }
   }
 
@@ -65,7 +75,7 @@ class Contact extends Component {
             {/* <p>I would love to hear from you!</p> */}
           </div>
           <div className={contactStyles.body}>
-            <form>
+            <form type="hidden" name="form-name" value="contact">
               <div className={contactStyles.inputWrapper}>
                 <input
                   onChange={this.handleInput}
