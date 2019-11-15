@@ -2,7 +2,6 @@ import React, { Component } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import { loadReCaptcha } from "react-recaptcha-google"
 import contactStyles from "./contact.module.scss"
-import ReCaptcha from "../ReCaptcha"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons"
 
@@ -123,7 +122,6 @@ class Contact extends Component {
             </form>
           </div>
           <div className={contactStyles.footer}>
-            <ReCaptcha />
             <button onClick={this.handleSubmit}>Submit Message</button>
           </div>
         </div>

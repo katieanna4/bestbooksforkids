@@ -43,10 +43,15 @@ const FeaturedBook = () => {
             <p className={featuredStyle.contentTitle}>
               {data.allContentfulFeaturedBook.edges[0].node.blogTitle}
             </p>
-            <span>
-              <FontAwesomeIcon className={featuredStyle.icons} icon={faUser} />{" "}
-              {data.allContentfulFeaturedBook.edges[0].node.author}
-            </span>
+            <Link to="/about" style={{ textDecoration: "none" }}>
+              <span>
+                <FontAwesomeIcon
+                  className={featuredStyle.icons}
+                  icon={faUser}
+                />{" "}
+                {data.allContentfulFeaturedBook.edges[0].node.author}
+              </span>
+            </Link>
 
             <div className={featuredStyle.contentBody}>
               <p>

@@ -1,9 +1,25 @@
+$mainColor: #9fd2cb;
+$secondaryColor: #d29b6c;
+$textColor: #f4b9a9;
+$darkText: #263147;
+$backgroundColor: #a6a9a9;
+
+$secondaryFont: Optima, sans-serif;
+$primaryFont: Trebuchet MS, sans-serif;
+
 .footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  align-items: center;
   border-top: solid 2px #d3d3d3;
   padding: 1.75rem;
+}
+
+.icons {
+  font-size: 2rem;
+  color: $darkText;
+  margin: auto 2rem;
 }
 
 @media only screen and (max-width: 480px) {

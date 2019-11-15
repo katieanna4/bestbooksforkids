@@ -163,11 +163,12 @@ class BlogHeader extends Component {
       <div className={styles.container}>
         <div className={styles.blogHeader}>
           <div>
-            <h1>My Blog</h1>
+            <h1>Best Books for Kids</h1>
             <p>
-              This is going to a be a description about the blog. It probably
-              should be 2-3 sentences long and entice the reader to click on a
-              blog post below. This is the third sentence.
+              Get the inside scoop on which books are actually fun to read out
+              loud to your kids! Find the authors your kids will love. Spend
+              your time actually reading instead of looking for books you may or
+              may not like.
             </p>
           </div>
         </div>
