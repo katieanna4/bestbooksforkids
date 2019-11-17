@@ -25,9 +25,6 @@ class BlogHeader extends Component {
       return index.node.category
     })
 
-    console.log("{}{}{}{}{}{}")
-    console.log(this.state.category)
-    console.log("==========")
     if (this.state.category === "Most Recent") {
       return false
     } else {
@@ -36,7 +33,6 @@ class BlogHeader extends Component {
         index
       ].node.subCategories.subCategories.split(", ")
 
-      console.log(subArr)
       this.setState({
         subCategory: subArr,
         showSub: subArr[0],
@@ -72,8 +68,7 @@ class BlogHeader extends Component {
       } else {
         let val = this.state.subCategory
         let posts = postViewFilters.getCategory(this.state.allPosts[0], value)
-        console.log("MADE IT BACK TO INDEX")
-        console.log(name, value)
+
         this.setState(
           {
             posts,
@@ -99,8 +94,7 @@ class BlogHeader extends Component {
   handleSubInput = event => {
     let name = event.target.name
     let value = event.target.value
-    console.log("{}{}{}{}{}{}{}{}{}")
-    console.log(name, value)
+
     if (!this.state.showSub || value === "All") {
       let val = "All"
       let posts = postViewFilters.getCategory(
@@ -213,56 +207,6 @@ class BlogHeader extends Component {
                     </option>
                   )
                 })}
-
-                {/* <option
-                  className={styles.options}
-                  name="category"
-                  value="Age 0-3"
-                >
-                  Age 0-3
-                </option>
-                <option
-                  className={styles.options}
-                  name="category"
-                  value="Age 3-5"
-                >
-                  Age 3-5
-                </option>
-                <option
-                  className={styles.options}
-                  name="category"
-                  value="9-12 YA"
-                >
-                  9-12 YA
-                </option>
-                <option
-                  className={styles.options}
-                  name="category"
-                  value="Storytales"
-                >
-                  Storytales
-                </option>
-                <option
-                  className={styles.options}
-                  name="category"
-                  value="Librarians"
-                >
-                  Librarians
-                </option>
-                <option
-                  className={styles.options}
-                  name="category"
-                  value="Storytime"
-                >
-                  Storytime
-                </option>
-                <option
-                  className={styles.options}
-                  name="category"
-                  value="Newbury"
-                >
-                  Newbury
-                </option> */}
               </select>
 
               {!this.state.subCategory ? (

@@ -24,6 +24,14 @@ $primaryFont: Trebuchet MS, sans-serif;
   background-size: cover;
 }
 
+.displayMessage {
+  margin: 1rem auto;
+  padding: 0;
+  font-family: $secondaryFont;
+  color: $darkText;
+  font-size: 2rem;
+}
+
 .card {
   background-color: transparent;
   border-radius: 3%;

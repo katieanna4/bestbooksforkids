@@ -18,6 +18,8 @@ class Contact extends Component {
     message: null,
     nameValid: true,
     emailValid: true,
+    displayMessage: false,
+    messageText: "",
   }
 
   handleInput = event => {
@@ -32,6 +34,27 @@ class Contact extends Component {
   validateEmail = email => {
     let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     return re.test(String(email).toLowerCase())
+  }
+
+  sendMessage = message => {
+    document.getElementById("nameField").value = ""
+    document.getElementById("emailField").value = ""
+    document.getElementById("messageField").value = ""
+
+    this.setState(
+      {
+        displayMessage: true,
+        messageText: message,
+      },
+      () => {
+        setTimeout(() => {
+          this.setState({
+            displayMessage: false,
+            messageText: "",
+          })
+        }, 1500)
+      }
+    )
   }
 
   handleSubmit = event => {
@@ -56,7 +79,7 @@ class Contact extends Component {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({ "form-name": "contact", ...this.state }),
       })
-        .then(() => alert("Success!"))
+        .then(() => this.sendMessage("Message sent successfully!"))
         .catch(error => alert(error))
     }
   }
@@ -84,6 +107,7 @@ class Contact extends Component {
                 <input
                   onChange={this.handleInput}
                   type="name"
+                  id="nameField"
                   name="name"
                   placeholder="Enter your name"
                 ></input>
@@ -101,6 +125,7 @@ class Contact extends Component {
                   onChange={this.handleInput}
                   type="email"
                   name="email"
+                  id="emailField"
                   placeholder="Enter your email address"
                 ></input>
                 {this.state.emailValid ? (
@@ -115,6 +140,7 @@ class Contact extends Component {
               <textarea
                 onChange={this.handleInput}
                 name="message"
+                id="messageField"
                 rows="10"
                 cols="30"
                 placeholder="Your message here..."
@@ -123,6 +149,13 @@ class Contact extends Component {
           </div>
           <div className={contactStyles.footer}>
             <button onClick={this.handleSubmit}>Submit Message</button>
+            <div>
+              {this.state.displayMessage ? (
+                <h3 className={contactStyles.displayMessage}>
+                  {this.state.messageText}
+                </h3>
+              ) : null}
+            </div>
           </div>
         </div>
       </div>
