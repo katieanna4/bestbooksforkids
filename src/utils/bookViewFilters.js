@@ -1,13 +1,12 @@
 import { array } from "prop-types"
 
 const bookViewFilters = {
-  getCategory: (bookArr, category) => {
-    console.log("this filter function is running")
-    console.log(bookArr)
+  getCategory: (bookArr, category, type) => {
     let results = []
 
     bookArr.forEach(index => {
       const book = new Object(index)
+
       if (typeof book.node.category === "string") {
         book.node.category = book.node.category.split(", ")
       }

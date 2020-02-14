@@ -304,9 +304,7 @@ class BlogPost extends Component {
             </div>
             <p className={blogStyles.published}>{this.state.post.published}</p>
             <div className={blogStyles.relatedHeader}>
-              <h3>
-                Here are some of the books I recommend for Young Adult Romance
-              </h3>
+              <h3>Here are some of the books I recommend</h3>
             </div>
             <div className={blogStyles.relatedBooks}>
               {this.state.books.edges.length > 3 ? (

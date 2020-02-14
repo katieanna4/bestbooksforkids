@@ -6,7 +6,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import homeStyles from "./home.module.scss"
 import BookView from "../components/BookView"
-import RandomBooks from "../components/RandomBooks"
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -29,23 +28,7 @@ const IndexPage = () => {
           }
         }
       }
-      allContentfulRandomBook {
-        edges {
-          node {
-            bookTitle
-            bookImage {
-              file {
-                url
-              }
-            }
-            author
-            category
-            tags
-            amazonLink
-            goodReads
-          }
-        }
-      }
+
       allContentfulCategories(
         sort: { fields: [category, subCategories___subCategories], order: ASC }
       ) {
@@ -74,9 +57,6 @@ const IndexPage = () => {
         </div>
       </div>
 
-      {/* {data.allContentfulRandomBook.edges.map(index => {
-        return <RandomBooks book={index} />
-      })} */}
       <BookView
         books={data.allContentfulBook.edges}
         categories={data.allContentfulCategories}

@@ -102,7 +102,8 @@ class BookView extends Component {
         books: arr,
       })
     } else {
-      let books = bookViewFilters.getCategory(this.state.books, value)
+      let books = bookViewFilters.searchBooks(this.state.books, value)
+      console.log(books, value, name)
       this.setState({
         books,
         [name]: value,
@@ -134,11 +135,6 @@ class BookView extends Component {
     }
   }
 
-  //   onKeyDown = event => {
-  //     event.preventDefault()
-
-  //   }
-
   componentDidMount() {
     this.getSubCategory()
     let books = bookViewFilters.getCategory(
@@ -152,6 +148,7 @@ class BookView extends Component {
   }
 
   render() {
+    console.log(this.state.books)
     return (
       <div>
         <div className={bookViewStyles.header}>
@@ -193,62 +190,6 @@ class BookView extends Component {
                     </option>
                   )
                 })}
-                {/* <option
-                className={bookViewStyles.options}
-                name="category"
-                value="Top Ten"
-              >
-                Top Ten
-              </option>
-              <option
-                className={bookViewStyles.options}
-                name="category"
-                value="Age 0-3"
-              >
-                Age 0-3
-              </option>
-              <option
-                className={bookViewStyles.options}
-                name="category"
-                value="Age 3-5"
-              >
-                Age 3-5
-              </option>
-              <option
-                className={bookViewStyles.options}
-                name="category"
-                value="9-12 YA"
-              >
-                9-12 YA
-              </option>
-              <option
-                className={bookViewStyles.options}
-                name="category"
-                value="Storytales"
-              >
-                Storytales
-              </option>
-              <option
-                className={bookViewStyles.options}
-                name="category"
-                value="Librarians"
-              >
-                Librarians
-              </option>
-              <option
-                className={bookViewStyles.options}
-                name="category"
-                value="Storytime"
-              >
-                Storytime
-              </option>
-              <option
-                className={bookViewStyles.options}
-                name="category"
-                value="Newbury"
-              >
-                Newbury
-              </option> */}
               </select>
               {this.state.subCategory ? (
                 <div>
