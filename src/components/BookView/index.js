@@ -45,10 +45,6 @@ class BookView extends Component {
     let name = event.target.name
     let value = event.target.value
 
-    console.log("{}{}{}{}{}{}{}")
-    console.log(name)
-    console.log(value)
-
     if (name === "searchParameter") {
       this.setState({
         [name]: value,
@@ -83,33 +79,45 @@ class BookView extends Component {
     let name = event.target.name
     let value = event.target.value
 
-    if (!this.state.subCat || value === "All") {
-      let val = "All"
+    let books = bookViewFilters.getCategory(
+      this.state.allBooks[0],
+      this.state.category
+    )
 
-      let books = bookViewFilters.getCategory(
-        this.state.allBooks[0],
-        this.state.category
-      )
-      this.setState({
+    this.setState(
+      {
         books,
-        [name]: value,
-        subCat: val,
-      })
-    } else if (value === "Z-A" || value === "A-Z") {
-      let arr = this.state.books
-      arr.reverse()
-      this.setState({
-        books: arr,
-      })
-    } else {
-      let books = bookViewFilters.searchBooks(this.state.books, value)
-      console.log(books, value, name)
-      this.setState({
-        books,
-        [name]: value,
-        subCat: value,
-      })
-    }
+      },
+      () => {
+        if (!this.state.subCat || value === "All") {
+          let val = "All"
+
+          let books = bookViewFilters.getCategory(
+            this.state.allBooks[0],
+            this.state.category
+          )
+          this.setState({
+            books,
+            [name]: value,
+            subCat: val,
+          })
+        } else if (value === "Z-A" || value === "A-Z") {
+          let arr = this.state.books
+          arr.reverse()
+          this.setState({
+            books: arr,
+          })
+        } else {
+          let books = bookViewFilters.searchBooks(this.state.books, value)
+
+          this.setState({
+            books,
+            [name]: value,
+            subCat: value,
+          })
+        }
+      }
+    )
   }
 
   handleSubmit = event => {

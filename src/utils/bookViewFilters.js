@@ -25,7 +25,6 @@ const bookViewFilters = {
       let string = new String(index)
 
       if (string.search(term.toLowerCase()) >= 0) {
-        console.log("successful match")
         return (results = true)
       }
     })
@@ -72,7 +71,6 @@ const bookViewFilters = {
       ) {
         results.push(book)
       } else if (lowerCaseTags.includes(search.toLowerCase())) {
-        console.log("match found")
         results.push(book)
       }
     })
