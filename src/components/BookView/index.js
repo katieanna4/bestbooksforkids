@@ -11,9 +11,9 @@ class BookView extends Component {
     allBooks: [this.props.books],
     allCategories: [this.props.categories],
     books: [],
-    category: "Top Ten",
+    category: "Current Top Ten",
     searchParameter: undefined,
-    showing: "Top Ten",
+    showing: "Current Top Ten",
     subCategory: null,
     subCat: "A-Z",
   }
@@ -23,7 +23,7 @@ class BookView extends Component {
       return index.node.category
     })
 
-    if (this.state.category === "Top Ten") {
+    if (this.state.category === "Current Top Ten") {
       let subArr = ["A-Z", "Z-A"]
       this.setState({
         subCategory: subArr,
@@ -183,9 +183,9 @@ class BookView extends Component {
                 <option
                   className={bookViewStyles.options}
                   name="category"
-                  value="Top Ten"
+                  value="Current Top Ten"
                 >
-                  Top Ten
+                  Current Top Ten
                 </option>
                 {this.state.allCategories[0].edges.map(index => {
                   return (
