@@ -11,7 +11,11 @@ const bookViewFilters = {
         book.node.category = book.node.category.split(", ")
       }
 
-      if (book.node.category.includes(category)) {
+      let bookCategories = []
+      book.node.category.forEach(book => {
+        bookCategories.push(book.trim())
+      })
+      if (bookCategories.includes(category.trim())) {
         results.push(book)
       }
     })

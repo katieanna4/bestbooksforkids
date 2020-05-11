@@ -34,9 +34,14 @@ class BookView extends Component {
       let subArr = this.state.allCategories[0].edges[
         index
       ].node.subCategories.subCategories.split(", ")
+      let trimmedSubArr = []
+      subArr.forEach(index => {
+        console.log(index)
+        trimmedSubArr.push(index.trim())
+      })
       this.setState({
-        subCategory: subArr,
-        subCat: subArr[0],
+        subCategory: trimmedSubArr,
+        subCat: trimmedSubArr[0],
       })
     }
   }
@@ -156,7 +161,6 @@ class BookView extends Component {
   }
 
   render() {
-    console.log(this.state.books)
     return (
       <div>
         <div className={bookViewStyles.header}>
