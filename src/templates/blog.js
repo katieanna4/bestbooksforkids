@@ -303,60 +303,65 @@ class BlogPost extends Component {
               {documentToReactComponents(this.state.post.blogBody.json)}
             </div>
             <p className={blogStyles.published}>{this.state.post.published}</p>
-            <div className={blogStyles.relatedHeader}>
-              <h3>Here are some of the books I recommend</h3>
-            </div>
-            <div className={blogStyles.relatedBooks}>
-              {this.state.books.edges.length > 3 ? (
-                <FontAwesomeIcon
-                  onClick={this.prev}
-                  className={blogStyles.arrow}
-                  icon={faAngleLeft}
-                />
-              ) : (
-                ""
-              )}
-              <ul>
-                {this.state.visibleBooks &&
-                  this.state.visibleBooks.map(index => {
-                    return <RecommendedBooks book={index} />
-                  })}
-              </ul>
-              {this.state.books.edges.length > 3 ? (
-                <FontAwesomeIcon
-                  onClick={this.next}
-                  className={blogStyles.arrow}
-                  icon={faAngleRight}
-                />
-              ) : (
-                ""
-              )}
-            </div>
-            <div className={blogStyles.mobileRelatedBooks}>
-              {this.state.books.edges.length > 2 ? (
-                <FontAwesomeIcon
-                  onClick={this.mobilePrev}
-                  className={blogStyles.mobileArrowLeft}
-                  icon={faAngleLeft}
-                />
-              ) : (
-                ""
-              )}
-              <ul>
-                {this.state.mobileBooks.map(index => {
-                  return <RecommendedBooks book={index} />
-                })}
-              </ul>
-              {this.state.books.edges.length > 2 ? (
-                <FontAwesomeIcon
-                  onClick={this.mobileNext}
-                  className={blogStyles.mobileArrowRight}
-                  icon={faAngleRight}
-                />
-              ) : (
-                ""
-              )}
-            </div>
+            {this.state.visibleBooks && (
+              <div>
+                <div className={blogStyles.relatedHeader}>
+                  <h3>Here are some of the books I recommend</h3>
+                </div>
+                <div className={blogStyles.relatedBooks}>
+                  {this.state.books.edges.length > 3 ? (
+                    <FontAwesomeIcon
+                      onClick={this.prev}
+                      className={blogStyles.arrow}
+                      icon={faAngleLeft}
+                    />
+                  ) : (
+                    ""
+                  )}
+                  <ul>
+                    {this.state.visibleBooks &&
+                      this.state.visibleBooks.map(index => {
+                        return <RecommendedBooks book={index} />
+                      })}
+                  </ul>
+                  {this.state.books.edges.length > 3 ? (
+                    <FontAwesomeIcon
+                      onClick={this.next}
+                      className={blogStyles.arrow}
+                      icon={faAngleRight}
+                    />
+                  ) : (
+                    ""
+                  )}
+                </div>
+                <div className={blogStyles.mobileRelatedBooks}>
+                  {this.state.books.edges.length > 2 ? (
+                    <FontAwesomeIcon
+                      onClick={this.mobilePrev}
+                      className={blogStyles.mobileArrowLeft}
+                      icon={faAngleLeft}
+                    />
+                  ) : (
+                    ""
+                  )}
+                  <ul>
+                    {this.state.mobileBooks &&
+                      this.state.mobileBooks.map(index => {
+                        return <RecommendedBooks book={index} />
+                      })}
+                  </ul>
+                  {this.state.books.edges.length > 2 ? (
+                    <FontAwesomeIcon
+                      onClick={this.mobileNext}
+                      className={blogStyles.mobileArrowRight}
+                      icon={faAngleRight}
+                    />
+                  ) : (
+                    ""
+                  )}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
