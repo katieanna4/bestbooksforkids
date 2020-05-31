@@ -317,9 +317,10 @@ class BlogPost extends Component {
                 ""
               )}
               <ul>
-                {this.state.visibleBooks.map(index => {
-                  return <RecommendedBooks book={index} />
-                })}
+                {this.state.visibleBooks &&
+                  this.state.visibleBooks.map(index => {
+                    return <RecommendedBooks book={index} />
+                  })}
               </ul>
               {this.state.books.edges.length > 3 ? (
                 <FontAwesomeIcon
