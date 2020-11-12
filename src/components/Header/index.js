@@ -8,7 +8,6 @@ const Header = props => {
       <div className={headerStyles.jumbotron}>
         <div className={headerStyles.pageInfo}>
           <span>Best</span>
-
           <h4> BOOKS FOR KIDS</h4>
         </div>
       </div>
