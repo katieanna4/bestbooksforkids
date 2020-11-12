@@ -11,7 +11,11 @@ const Footer = () => {
       <div>
         © {new Date().getFullYear()}, Best Books for Kids
         {` `}
-        <a style={{ textDecoration: "none" }} href="" target="_blank">
+        <a
+          style={{ textDecoration: "none" }}
+          href="https://www.instagram.com/bestbookskids"
+          target="_blank"
+        >
           <FontAwesomeIcon className={footerStyles.icons} icon={faInstagram} />
         </a>
       </div>

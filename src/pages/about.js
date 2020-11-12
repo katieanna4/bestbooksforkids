@@ -25,7 +25,13 @@ const AboutPage = () => {
           <div className={styles.bio}>
             <h3>About Katie</h3>
             <div className={styles.contact}>
-              <FontAwesomeIcon className={styles.icons} icon={faInstagram} />
+              <a
+                className={styles.instagram}
+                href="https://www.instagram.com/bestbookskids"
+                target="_blank"
+              >
+                <FontAwesomeIcon className={styles.icons} icon={faInstagram} />
+              </a>
               <FontAwesomeIcon
                 onClick={scrollToContact}
                 className={styles.icons}
