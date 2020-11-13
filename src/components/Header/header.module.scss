@@ -15,14 +15,6 @@ $primaryFont: "proxima_nova", Arial, Helvetica, Geneva, sans-serif;
   justify-content: center;
 
   background-color: white;
-}
-
-.pageInfo {
-  margin-top: 2rem;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 
   span {
     font-family: $primaryFont;
@@ -38,8 +30,14 @@ $primaryFont: "proxima_nova", Arial, Helvetica, Geneva, sans-serif;
     font-size: 2.5rem;
     color: $darkText;
     font-family: $primaryFont;
-    margin-top: -1rem;
+    margin-top: -1.25rem;
+    margin-bottom: 3rem;
   }
+}
+
+.pageInfo {
+  margin-top: 1rem;
+  text-align: center;
 }
 
 .navBar {
@@ -200,13 +198,12 @@ $primaryFont: "proxima_nova", Arial, Helvetica, Geneva, sans-serif;
     justify-content: center;
 
     .pageInfo {
-      margin-top: 1.75rem;
+      margin-top: 2.5rem;
       display: block;
     }
 
     span {
-      font-family: cursive;
-      font-style: italic;
+      font-family: $primaryFont;
       font-size: 2.25rem;
       font-weight: 800;
       color: $darkText;
